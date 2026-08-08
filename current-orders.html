@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Printer Pro - Current Orders</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #e9eef5;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #172033;
+        }
+
+        .orders-page {
+            width: 100%;
+            max-width: 520px;
+            min-height: 100vh;
+            margin: auto;
+            background: #f5f8fc;
+            padding: 22px 16px 95px;
+        }
+
+        /* HEADER */
+
+        .orders-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 22px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .back-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1264d6;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+        }
+
+        .back-btn i {
+            font-size: 20px;
+        }
+
+        .orders-header h4 {
+            margin: 0;
+            font-size: 21px;
+            font-weight: 700;
+        }
+
+        .orders-header p {
+            margin: 3px 0 0;
+            color: #8993a5;
+            font-size: 12px;
+        }
+
+        .notification-btn {
+            width: 42px;
+            height: 42px;
+            border: none;
+            border-radius: 50%;
+            background: #ffffff;
+            color: #1264d6;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+        }
+
+        /* EMPTY STATE */
+
+        .empty-orders {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 45px 25px;
+            text-align: center;
+            border: 1px solid #edf1f7;
+            box-shadow: 0 5px 18px rgba(24,39,75,0.06);
+        }
+
+        .empty-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 18px;
+            border-radius: 22px;
+            background: #eaf2ff;
+            color: #1264d6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 38px;
+        }
+
+        .empty-orders h5 {
+            margin: 0 0 8px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .empty-orders p {
+            margin: 0 auto 20px;
+            max-width: 300px;
+            color: #8993a5;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .shop-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: #1264d6;
+            color: #ffffff;
+            padding: 11px 18px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* ORDER CARD */
+
+        .order-card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 16px;
+            margin-bottom: 16px;
+            border: 1px solid #edf1f7;
+            box-shadow: 0 5px 18px rgba(24,39,75,0.06);
+        }
+
+        .order-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .order-label {
+            display: block;
+            font-size: 10px;
+            color: #8993a5;
+            margin-bottom: 3px;
+        }
+
+        .order-id {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .status {
+            padding: 6px 10px;
+            border-radius: 20px;
+            background: #fff3df;
+            color: #d87913;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .product-row {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #edf1f7;
+        }
+
+        .product-icon {
+            width: 55px;
+            height: 55px;
+            flex-shrink: 0;
+            border-radius: 14px;
+            background: #eaf2ff;
+            color: #1264d6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product-info h6 {
+            margin: 0 0 4px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .product-info p {
+            margin: 0;
+            color: #8993a5;
+            font-size: 11px;
+        }
+
+        .product-price {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .order-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 15px 0;
+        }
+
+        .info-box small {
+            display: block;
+            color: #8993a5;
+            font-size: 10px;
+            margin-bottom: 4px;
+        }
+
+        .info-box span {
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* PROGRESS */
+
+        .tracking {
+            display: flex;
+            align-items: center;
+            margin: 5px 0 18px;
+        }
+
+        .track-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 50px;
+        }
+
+        .track-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #eaf2ff;
+            color: #1264d6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .track-step small {
+            margin-top: 5px;
+            color: #8993a5;
+            font-size: 8px;
+            text-align: center;
+        }
+
+        .track-step.active small {
+            color: #1264d6;
+            font-weight: 700;
+        }
+
+        .track-line {
+            height: 2px;
+            flex: 1;
+            background: #dfe5ed;
+            margin-bottom: 18px;
+        }
+
+        .track-line.active {
+            background: #1264d6;
+        }
+
+        /* BUTTONS */
+
+        .order-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .details-btn,
+        .track-btn {
+            height: 42px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .details-btn {
+            background: #ffffff;
+            color: #1264d6;
+            border: 1px solid #1264d6;
+        }
+
+        .track-btn {
+            background: #1264d6;
+            color: #ffffff;
+            border: none;
+        }
+
+        /* BOTTOM NAV */
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 520px;
+            height: 70px;
+            background: rgba(255,255,255,0.97);
+            border-top: 1px solid #e8edf4;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.06);
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            z-index: 1000;
+        }
+
+        .bottom-nav a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            color: #969daa;
+            text-decoration: none;
+            font-size: 10px;
+        }
+
+        .bottom-nav a i {
+            font-size: 21px;
+        }
+
+        .bottom-nav a.active {
+            color: #1264d6;
+            font-weight: 700;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="orders-page">
+
+    <!-- HEADER -->
+
+    <div class="orders-header">
+
+        <div class="header-left">
+
+            <a href="home.html" class="back-btn">
+                <i class="bi bi-arrow-left"></i>
+            </a>
+
+            <div>
+
+                <h4>Current Orders</h4>
+
+                <p>
+                    Track your ongoing orders
+                </p>
+
+            </div>
+
+        </div>
+
+        <button class="notification-btn">
+            <i class="bi bi-bell"></i>
+        </button>
+
+    </div>
+
+
+    <!-- ORDER 1 -->
+
+    <div class="order-card">
+
+        <div class="order-top">
+
+            <div>
+
+                <span class="order-label">
+                    Order ID
+                </span>
+
+                <span class="order-id">
+                    #ORD1256
+                </span>
+
+            </div>
+
+            <span class="status">
+                Processing
+            </span>
+
+        </div>
+
+
+        <div class="product-row">
+
+            <div class="product-icon">
+                <i class="bi bi-printer"></i>
+            </div>
+
+            <div class="product-info">
+
+                <h6>
+                    HP 12A Toner Cartridge
+                </h6>
+
+                <p>
+                    Black • 1 Item
+                </p>
+
+            </div>
+
+            <div class="product-price">
+                ₹1,250
+            </div>
+
+        </div>
+
+
+        <div class="order-info">
+
+            <div class="info-box">
+
+                <small>
+                    Order Date
+                </small>
+
+                <span>
+                    20 May 2024
+                </span>
+
+            </div>
+
+            <div class="info-box">
+
+                <small>
+                    Expected Delivery
+                </small>
+
+                <span>
+                    24 May 2024
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="tracking">
+
+            <div class="track-step active">
+
+                <div class="track-icon">
+                    <i class="bi bi-check"></i>
+                </div>
+
+                <small>Ordered</small>
+
+            </div>
+
+            <div class="track-line active"></div>
+
+            <div class="track-step active">
+
+                <div class="track-icon">
+                    <i class="bi bi-box-seam"></i>
+                </div>
+
+                <small>Packed</small>
+
+            </div>
+
+            <div class="track-line"></div>
+
+            <div class="track-step">
+
+                <div class="track-icon">
+                    <i class="bi bi-truck"></i>
+                </div>
+
+                <small>Shipped</small>
+
+            </div>
+
+            <div class="track-line"></div>
+
+            <div class="track-step">
+
+                <div class="track-icon">
+                    <i class="bi bi-house-check"></i>
+                </div>
+
+                <small>Delivered</small>
+
+            </div>
+
+        </div>
+
+
+        <div class="order-actions">
+
+            <a
+                href="order-details.html"
+                class="details-btn d-flex align-items-center justify-content-center">
+
+                View Details
+
+            </a>
+
+            <a
+                href="track-order.html"
+                class="track-btn d-flex align-items-center justify-content-center">
+
+                Track Order
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- ORDER 2 -->
+
+    <div class="order-card">
+
+        <div class="order-top">
+
+            <div>
+
+                <span class="order-label">
+                    Order ID
+                </span>
+
+                <span class="order-id">
+                    #ORD1262
+                </span>
+
+            </div>
+
+            <span class="status">
+                Shipped
+            </span>
+
+        </div>
+
+
+        <div class="product-row">
+
+            <div class="product-icon">
+                <i class="bi bi-droplet"></i>
+            </div>
+
+            <div class="product-info">
+
+                <h6>
+                    HP 678 Ink Cartridge
+                </h6>
+
+                <p>
+                    Tri-Color • 1 Item
+                </p>
+
+            </div>
+
+            <div class="product-price">
+                ₹890
+            </div>
+
+        </div>
+
+
+        <div class="order-info">
+
+            <div class="info-box">
+
+                <small>
+                    Order Date
+                </small>
+
+                <span>
+                    22 May 2024
+                </span>
+
+            </div>
+
+            <div class="info-box">
+
+                <small>
+                    Expected Delivery
+                </small>
+
+                <span>
+                    26 May 2024
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="tracking">
+
+            <div class="track-step active">
+
+                <div class="track-icon">
+                    <i class="bi bi-check"></i>
+                </div>
+
+                <small>Ordered</small>
+
+            </div>
+
+            <div class="track-line active"></div>
+
+            <div class="track-step active">
+
+                <div class="track-icon">
+                    <i class="bi bi-box-seam"></i>
+                </div>
+
+                <small>Packed</small>
+
+            </div>
+
+            <div class="track-line active"></div>
+
+            <div class="track-step active">
+
+                <div class="track-icon">
+                    <i class="bi bi-truck"></i>
+                </div>
+
+                <small>Shipped</small>
+
+            </div>
+
+            <div class="track-line"></div>
+
+            <div class="track-step">
+
+                <div class="track-icon">
+                    <i class="bi bi-house-check"></i>
+                </div>
+
+                <small>Delivered</small>
+
+            </div>
+
+        </div>
+
+
+        <div class="order-actions">
+
+            <a
+                href="order-details.html"
+                class="details-btn d-flex align-items-center justify-content-center">
+
+                View Details
+
+            </a>
+
+            <a
+                href="track-order.html"
+                class="track-btn d-flex align-items-center justify-content-center">
+
+                Track Order
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<!-- BOTTOM NAVIGATION -->
+
+<div class="bottom-nav">
+
+    <a href="home.html">
+
+        <i class="bi bi-house"></i>
+
+        <span>Home</span>
+
+    </a>
+
+
+    <a
+        href="current-orders.html"
+        class="active">
+
+        <i class="bi bi-truck"></i>
+
+        <span>Current Orders</span>
+
+    </a>
+
+
+    <a href="history.html">
+
+        <i class="bi bi-clock-history"></i>
+
+        <span>History</span>
+
+    </a>
+
+
+    <a href="profile.html">
+
+        <i class="bi bi-person"></i>
+
+        <span>Profile</span>
+
+    </a>
+
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Printer Pro - Select Address</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f5f8fc;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #172033;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .address-page {
+            width: 100%;
+            max-width: 520px;
+            min-height: 100vh;
+            margin: 0 auto;
+            padding: 20px 16px 110px;
+            background: #f5f8fc;
+        }
+
+        /* ================================
+           HEADER
+        ================================= */
+
+        .address-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 25px;
+        }
+
+        .back-btn {
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #ffffff;
+            color: #1264d6;
+
+            border-radius: 13px;
+
+            box-shadow: 0 5px 18px rgba(24, 39, 75, 0.08);
+        }
+
+        .back-btn i {
+            font-size: 20px;
+        }
+
+        .address-header h4 {
+            margin: 0 0 4px;
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .address-header p {
+            margin: 0;
+            font-size: 13px;
+            color: #7d8798;
+        }
+
+        /* ================================
+           PROGRESS
+        ================================= */
+
+        .progress-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 15px 12px;
+
+            display: flex;
+            align-items: center;
+
+            margin-bottom: 25px;
+
+            box-shadow: 0 5px 18px rgba(24, 39, 75, 0.06);
+        }
+
+        .progress-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 45px;
+        }
+
+        .progress-circle {
+            width: 30px;
+            height: 30px;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #e9eef5;
+            color: #8c96a6;
+
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .progress-item.completed .progress-circle,
+        .progress-item.active .progress-circle {
+            background: #1264d6;
+            color: #ffffff;
+        }
+
+        .progress-item small {
+            margin-top: 5px;
+            font-size: 9px;
+            color: #8b95a5;
+        }
+
+        .progress-item.active small,
+        .progress-item.completed small {
+            color: #1264d6;
+            font-weight: 600;
+        }
+
+        .progress-line {
+            flex: 1;
+            height: 2px;
+            background: #dfe5ed;
+            margin: 0 5px;
+        }
+
+        .progress-line.completed {
+            background: #1264d6;
+        }
+
+        /* ================================
+           TITLE
+        ================================= */
+
+        .section-title {
+            margin-bottom: 14px;
+        }
+
+        .section-title h5 {
+            margin: 0 0 4px;
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .section-title p {
+            margin: 0;
+            font-size: 12px;
+            color: #8993a4;
+        }
+
+        /* ================================
+           ADDRESS CARD
+        ================================= */
+
+        .address-card {
+            background: #ffffff;
+            border: 1px solid #e5eaf1;
+            border-radius: 17px;
+
+            padding: 16px;
+
+            margin-bottom: 12px;
+
+            display: flex;
+            align-items: flex-start;
+            gap: 13px;
+
+            cursor: pointer;
+
+            box-shadow: 0 5px 18px rgba(24, 39, 75, 0.05);
+
+            transition: 0.2s ease;
+        }
+
+        .address-card:hover {
+            border-color: #bcd4f5;
+            transform: translateY(-1px);
+        }
+
+        .address-card.selected {
+            border: 2px solid #1264d6;
+            background: #f7faff;
+        }
+
+        .address-icon {
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+
+            border-radius: 12px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #eaf2ff;
+            color: #1264d6;
+        }
+
+        .address-icon i {
+            font-size: 20px;
+        }
+
+        .address-content {
+            flex: 1;
+        }
+
+        .address-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .address-top h6 {
+            margin: 0;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .default-badge {
+            padding: 4px 8px;
+            border-radius: 20px;
+
+            background: #e9f8ef;
+            color: #1b9b62;
+
+            font-size: 9px;
+            font-weight: 700;
+        }
+
+        .address-content p {
+            margin: 7px 0 0;
+
+            font-size: 12px;
+            line-height: 1.6;
+
+            color: #707b8d;
+        }
+
+        .address-phone {
+            margin-top: 7px;
+
+            font-size: 11px;
+            color: #566173;
+        }
+
+        .address-radio {
+            width: 21px;
+            height: 21px;
+
+            border: 2px solid #c9d1dc;
+            border-radius: 50%;
+
+            flex-shrink: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .address-card.selected .address-radio {
+            border-color: #1264d6;
+        }
+
+        .address-card.selected .address-radio::after {
+            content: "";
+            width: 10px;
+            height: 10px;
+
+            background: #1264d6;
+            border-radius: 50%;
+        }
+
+        /* ================================
+           ADD ADDRESS
+        ================================= */
+
+        .add-address-btn {
+            width: 100%;
+
+            height: 50px;
+
+            margin-top: 8px;
+
+            border: 1.5px dashed #b9c9df;
+            border-radius: 13px;
+
+            background: #f8fbff;
+
+            color: #1264d6;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .add-address-btn i {
+            font-size: 17px;
+        }
+
+        /* ================================
+           CONTINUE BUTTON
+        ================================= */
+
+        .continue-btn {
+            position: fixed;
+
+            bottom: 20px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: calc(100% - 32px);
+            max-width: 488px;
+
+            height: 52px;
+
+            border: none;
+            border-radius: 12px;
+
+            background: #1264d6;
+            color: #ffffff;
+
+            font-size: 15px;
+            font-weight: 700;
+
+            box-shadow: 0 8px 22px rgba(18, 100, 214, 0.25);
+
+            cursor: pointer;
+
+            z-index: 1000;
+        }
+
+        .continue-btn:hover {
+            background: #0758bd;
+        }
+
+        .continue-btn i {
+            margin-left: 7px;
+        }
+
+        /* ================================
+           EMPTY SPACE
+        ================================= */
+
+        .bottom-space {
+            height: 70px;
+        }
+
+        /* ================================
+           MOBILE
+        ================================= */
+
+        @media (max-width: 360px) {
+
+            .address-page {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .address-header h4 {
+                font-size: 20px;
+            }
+
+            .address-card {
+                padding: 13px;
+            }
+
+            .address-content p {
+                font-size: 11px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="address-page">
+
+
+    <!-- ================================
+         HEADER
+    ================================= -->
+
+    <div class="address-header">
+
+        <a
+            href="repair-schedule.html"
+            class="back-btn">
+
+            <i class="bi bi-arrow-left"></i>
+
+        </a>
+
+        <div>
+
+            <h4>
+                Select Address
+            </h4>
+
+            <p>
+                Where should we provide the service?
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================================
+         PROGRESS
+    ================================= -->
+
+    <div class="progress-card">
+
+        <div class="progress-item completed">
+
+            <div class="progress-circle">
+                <i class="bi bi-check"></i>
+            </div>
+
+            <small>
+                Printer
+            </small>
+
+        </div>
+
+
+        <div class="progress-line completed"></div>
+
+
+        <div class="progress-item completed">
+
+            <div class="progress-circle">
+                <i class="bi bi-check"></i>
+            </div>
+
+            <small>
+                Problem
+            </small>
+
+        </div>
+
+
+        <div class="progress-line completed"></div>
+
+
+        <div class="progress-item completed">
+
+            <div class="progress-circle">
+                <i class="bi bi-check"></i>
+            </div>
+
+            <small>
+                Schedule
+            </small>
+
+        </div>
+
+
+        <div class="progress-line"></div>
+
+
+        <div class="progress-item active">
+
+            <div class="progress-circle">
+                4
+            </div>
+
+            <small>
+                Address
+            </small>
+
+        </div>
+
+
+        <div class="progress-line"></div>
+
+
+        <div class="progress-item">
+
+            <div class="progress-circle">
+                5
+            </div>
+
+            <small>
+                Summary
+            </small>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================================
+         ADDRESS TITLE
+    ================================= -->
+
+    <div class="section-title">
+
+        <h5>
+            Your Addresses
+        </h5>
+
+        <p>
+            Select the address for printer service
+        </p>
+
+    </div>
+
+
+
+    <!-- ================================
+         ADDRESS 1
+    ================================= -->
+
+    <div
+        class="address-card selected"
+        onclick="selectAddress(this)">
+
+        <div class="address-icon">
+
+            <i class="bi bi-house-door"></i>
+
+        </div>
+
+
+        <div class="address-content">
+
+            <div class="address-top">
+
+                <h6>
+                    Home
+                </h6>
+
+                <span class="default-badge">
+                    DEFAULT
+                </span>
+
+            </div>
+
+            <p>
+                123, Main Road,<br>
+                Bhubaneswar, Odisha - 751001
+            </p>
+
+            <div class="address-phone">
+                <i class="bi bi-telephone"></i>
+                &nbsp; +91 98765 43210
+            </div>
+
+        </div>
+
+
+        <div class="address-radio"></div>
+
+    </div>
+
+
+
+    <!-- ================================
+         ADDRESS 2
+    ================================= -->
+
+    <div
+        class="address-card"
+        onclick="selectAddress(this)">
+
+        <div class="address-icon">
+
+            <i class="bi bi-building"></i>
+
+        </div>
+
+
+        <div class="address-content">
+
+            <div class="address-top">
+
+                <h6>
+                    Office
+                </h6>
+
+            </div>
+
+            <p>
+                Plot No. 45, Technology Park,<br>
+                Bhubaneswar, Odisha - 751024
+            </p>
+
+            <div class="address-phone">
+
+                <i class="bi bi-telephone"></i>
+
+                &nbsp; +91 98765 43210
+
+            </div>
+
+        </div>
+
+
+        <div class="address-radio"></div>
+
+    </div>
+
+
+
+    <!-- ================================
+         ADD NEW ADDRESS
+    ================================= -->
+
+    <a
+        href="addresses.html"
+        class="add-address-btn">
+
+        <i class="bi bi-plus-circle"></i>
+
+        Add New Address
+
+    </a>
+
+
+
+    <div class="bottom-space"></div>
+
+
+</div>
+
+
+
+<!-- ================================
+     CONTINUE
+================================= -->
+
+<button
+    class="continue-btn"
+    onclick="continueToSummary()">
+
+    Continue
+
+    <i class="bi bi-arrow-right"></i>
+
+</button>
+
+
+
+<script>
+
+    function selectAddress(card) {
+
+        const cards =
+            document.querySelectorAll(".address-card");
+
+        cards.forEach(function(item) {
+
+            item.classList.remove("selected");
+
+        });
+
+        card.classList.add("selected");
+
+    }
+
+
+    function continueToSummary() {
+
+        const selected =
+            document.querySelector(".address-card.selected");
+
+        if (!selected) {
+
+            alert("Please select an address.");
+
+            return;
+
+        }
+
+        window.location.href =
+            "repair-summary.html";
+
+    }
+
+</script>
+
+
+</body>
+
+</html>getting eerr

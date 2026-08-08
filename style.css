@@ -1,0 +1,2462 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #f5f8fc;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #172033;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================
+   APP CONTAINER
+========================================= */
+
+.app-container {
+    width: 100%;
+    max-width: 520px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: #f5f8fc;
+    position: relative;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.main-content {
+    padding: 22px 16px 30px;
+}
+
+
+/* =========================================
+   HOME HEADER
+========================================= */
+
+.home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.header-text {
+    flex: 1;
+}
+
+.hello {
+    margin: 0 0 5px;
+    color: #697386;
+    font-size: 14px;
+}
+
+.hello span {
+    color: #111827;
+    font-weight: 700;
+}
+
+.home-header h5 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.3;
+}
+
+.notification {
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #1264d6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+}
+
+
+/* =========================================
+   REPAIR BANNER
+========================================= */
+
+.repair-banner {
+    min-height: 145px;
+    border-radius: 20px;
+    padding: 22px 20px;
+    margin-bottom: 28px;
+
+    background: linear-gradient(
+        135deg,
+        #1465d8,
+        #0754bd
+    );
+
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 25px rgba(20, 101, 216, 0.25);
+}
+
+.banner-content {
+    max-width: 72%;
+}
+
+.banner-small {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+.repair-banner h4 {
+    margin: 5px 0 5px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.repair-banner p {
+    margin: 0 0 15px;
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+.book-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    background: white;
+    color: #1264d6;
+
+    border-radius: 8px;
+
+    padding: 9px 15px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: 0.2s;
+}
+
+.book-btn:hover {
+    background: #f0f5ff;
+    color: #0754bd;
+}
+
+.banner-printer {
+    width: 78px;
+    height: 78px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.14);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 46px;
+
+    transform: rotate(-5deg);
+}
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.section-heading {
+    margin-bottom: 14px;
+}
+
+.section-heading h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #172033;
+}
+
+.section-heading p {
+    margin: 4px 0 0;
+    font-size: 12px;
+    color: #8a94a6;
+}
+
+.why-heading {
+    margin-top: 30px;
+}
+
+
+/* =========================================
+   SERVICES GRID
+========================================= */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+
+/* =========================================
+   SERVICE CARD
+========================================= */
+
+.service-card {
+    position: relative;
+
+    min-height: 145px;
+
+    padding: 17px;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow:
+        0 5px 18px rgba(24, 39, 75, 0.07);
+
+    border: 1px solid #edf1f7;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+.service-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(24, 39, 75, 0.11);
+}
+
+.service-icon {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 21px;
+
+    margin-bottom: 15px;
+}
+
+.blue-icon {
+    background: #eaf2ff;
+    color: #1465d8;
+}
+
+.purple-icon {
+    background: #f0eaff;
+    color: #7755d9;
+}
+
+.green-icon {
+    background: #e8f8f0;
+    color: #1b9b62;
+}
+
+.orange-icon {
+    background: #fff1e7;
+    color: #ed7b2f;
+}
+
+.service-text h6 {
+    margin: 0 0 5px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    color: #172033;
+}
+
+.service-text p {
+    margin: 0;
+
+    color: #8993a5;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+}
+
+.service-arrow {
+    position: absolute;
+
+    right: 14px;
+    bottom: 15px;
+
+    font-size: 12px;
+
+    color: #b1b9c8;
+}
+
+
+/* =========================================
+   WHY CHOOSE US
+========================================= */
+
+.why-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.why-card {
+    background: white;
+
+    border: 1px solid #edf1f7;
+
+    border-radius: 15px;
+
+    padding: 13px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    box-shadow:
+        0 4px 15px rgba(24, 39, 75, 0.05);
+}
+
+.why-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background: #edf4ff;
+
+    color: #1264d6;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+}
+
+.why-card strong {
+    display: block;
+
+    font-size: 13px;
+
+    color: #172033;
+}
+
+.why-card p {
+    margin: 3px 0 0;
+
+    color: #8a94a6;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   WHATSAPP CARD
+========================================= */
+
+.whatsapp-card {
+    margin-top: 20px;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    background: #eaf8f0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 1px solid #d7f0e1;
+}
+
+.support-label {
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    color: #15945c;
+}
+
+.whatsapp-card h6 {
+    margin: 5px 0;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+.whatsapp-card p {
+    margin: 0 0 12px;
+
+    font-size: 11px;
+
+    color: #758174;
+}
+
+.whatsapp-btn {
+    border: none;
+
+    background: #1da85b;
+
+    color: white;
+
+    border-radius: 8px;
+
+    padding: 8px 13px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.whatsapp-big-icon {
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    background: #1da85b;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+}
+
+.bottom-space {
+    height: 75px;
+}
+
+
+/* =========================================
+   BOTTOM NAVIGATION
+========================================= */
+
+.bottom-nav {
+    position: fixed;
+
+    bottom: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 100%;
+    max-width: 520px;
+
+    height: 70px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-top: 1px solid #e8edf4;
+
+    box-shadow:
+        0 -5px 20px rgba(0, 0, 0, 0.06);
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    z-index: 1000;
+}
+
+.bottom-nav a {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    color: #969daa;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    transition: 0.2s;
+}
+
+.bottom-nav a i {
+    font-size: 21px;
+}
+
+.bottom-nav a.active {
+    color: #1264d6;
+    font-weight: 700;
+}
+
+.bottom-nav a:hover {
+    color: #1264d6;
+}
+
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+@media (min-width: 768px) {
+
+    body {
+        background: #e9eef5;
+    }
+
+    .app-container {
+        min-height: 100vh;
+
+        background: #f5f8fc;
+
+        box-shadow:
+            0 0 40px rgba(0, 0, 0, 0.08);
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+    .main-content {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .repair-banner {
+        padding: 18px 15px;
+    }
+
+    .repair-banner h4 {
+        font-size: 17px;
+    }
+
+    .services-grid {
+        gap: 10px;
+    }
+
+    .service-card {
+        padding: 14px;
+        min-height: 135px;
+    }
+
+    .bottom-nav a span {
+        font-size: 9px;
+    }
+
+}
+/* =====================================================
+   REPAIR SERVICE PAGE
+===================================================== */
+
+.repair-page {
+    max-width: 520px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 20px 16px 100px;
+    background: #f6f9fd;
+}
+
+
+/* HEADER */
+
+.repair-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.back-button {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+    border-radius: 12px;
+
+    color: #1264d6;
+    text-decoration: none;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+    flex-shrink: 0;
+}
+
+.back-button i {
+    font-size: 20px;
+}
+
+.repair-header h4 {
+    margin: 2px 0 4px;
+    font-size: 23px;
+    font-weight: 700;
+    color: #172033;
+}
+
+.repair-header p {
+    margin: 0;
+    color: #7b8495;
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   PROGRESS
+===================================================== */
+
+.repair-progress {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #ffffff;
+
+    padding: 15px 12px;
+
+    border-radius: 16px;
+
+    margin-bottom: 25px;
+
+    box-shadow: 0 5px 18px rgba(25, 75, 130, 0.06);
+}
+
+.repair-progress-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-width: 45px;
+}
+
+.repair-progress-item span {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eef2f7;
+
+    color: #8a93a3;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.repair-progress-item small {
+    margin-top: 5px;
+
+    font-size: 10px;
+
+    color: #8a93a3;
+}
+
+.repair-progress-item.active span {
+    background: #1264d6;
+    color: #ffffff;
+}
+
+.repair-progress-item.active small {
+    color: #1264d6;
+    font-weight: 600;
+}
+
+.repair-progress-line {
+    height: 2px;
+    flex: 1;
+    background: #e3e8ef;
+    margin: 0 5px;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.repair-title {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 18px;
+}
+
+.repair-title-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eaf3ff;
+
+    color: #1264d6;
+
+    border-radius: 14px;
+
+    flex-shrink: 0;
+}
+
+.repair-title-icon i {
+    font-size: 22px;
+}
+
+.repair-title h5 {
+    margin: 0 0 4px;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    color: #172033;
+}
+
+.repair-title p {
+    margin: 0;
+
+    font-size: 13px;
+
+    color: #7b8495;
+}
+
+
+/* =====================================================
+   REPAIR OPTIONS
+===================================================== */
+
+.repair-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.repair-option {
+    display: flex;
+    align-items: center;
+
+    padding: 16px;
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    text-decoration: none;
+
+    border: 1px solid #edf0f5;
+
+    box-shadow: 0 5px 18px rgba(25, 75, 130, 0.06);
+
+    transition: all 0.2s ease;
+}
+
+.repair-option:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 22px rgba(25, 75, 130, 0.11);
+
+    border-color: #dce8f8;
+}
+
+.repair-option-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    flex-shrink: 0;
+}
+
+.repair-option-icon i {
+    font-size: 21px;
+}
+
+.repair-option-icon.blue {
+    background: #eaf3ff;
+    color: #1264d6;
+}
+
+.repair-option-icon.purple {
+    background: #f2ecff;
+    color: #7047d8;
+}
+
+.repair-option-icon.orange {
+    background: #fff2e6;
+    color: #ed8a27;
+}
+
+.repair-option-icon.green {
+    background: #e9f8ef;
+    color: #21a45b;
+}
+
+.repair-option-content {
+    flex: 1;
+    margin-left: 14px;
+}
+
+.repair-option-content h6 {
+    margin: 0 0 5px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    color: #172033;
+}
+
+.repair-option-content p {
+    margin: 0;
+
+    font-size: 12px;
+
+    color: #858e9d;
+}
+
+.repair-arrow {
+    color: #a0a8b5;
+
+    font-size: 16px;
+}
+
+
+/* =====================================================
+   INFORMATION CARD
+===================================================== */
+
+.repair-info-card {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    background: #edf6ff;
+
+    border: 1px solid #dcecff;
+
+    border-radius: 15px;
+}
+
+.repair-info-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+
+    color: #1264d6;
+
+    border-radius: 10px;
+
+    flex-shrink: 0;
+}
+
+.repair-info-card strong {
+    display: block;
+
+    font-size: 13px;
+
+    color: #172033;
+
+    margin-bottom: 3px;
+}
+
+.repair-info-card p {
+    margin: 0;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    color: #718096;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 576px) {
+
+    .repair-page {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .repair-header h4 {
+        font-size: 21px;
+    }
+
+    .repair-progress {
+        padding: 13px 8px;
+    }
+
+    .repair-option {
+        padding: 14px;
+    }
+
+}
+/* =========================================
+   PRINTER PRO - GLOBAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f8fc;
+}
+
+
+/* =========================================
+   SPLASH SCREEN
+========================================= */
+
+.splash-screen {
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: linear-gradient(
+        145deg,
+        #075dcc,
+        #176fd5,
+        #0758c5
+    );
+
+    padding: 30px;
+
+}
+
+
+/* =========================================
+   SPLASH CONTENT
+========================================= */
+
+.splash-content {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    text-align: center;
+
+    color: white;
+
+}
+
+
+/* =========================================
+   PRINTER LOGO
+========================================= */
+
+.printer-logo {
+
+    width: 105px;
+
+    height: 105px;
+
+    margin: 0 auto 25px;
+
+    border-radius: 28px;
+
+    background: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.20);
+
+}
+
+
+.printer-logo i {
+
+    font-size: 55px;
+
+    color: #0864cf;
+
+}
+
+
+/* =========================================
+   APP NAME
+========================================= */
+
+.splash-content h1 {
+
+    font-size: 36px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.splash-content h1 span {
+
+    color: #dbeafe;
+
+}
+
+
+/* =========================================
+   TAGLINE
+========================================= */
+
+.tagline {
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+
+    opacity: 0.95;
+
+}
+
+
+.tagline span {
+
+    margin: 0 5px;
+
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.description {
+
+    font-size: 15px;
+
+    opacity: 0.9;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* =========================================
+   LOADING DOTS
+========================================= */
+
+.loading-dots {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.loading-dots span {
+
+    width: 8px;
+
+    height: 8px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    display: block;
+
+    animation: loading 1.4s infinite ease-in-out;
+
+}
+
+
+.loading-dots span:nth-child(1) {
+
+    animation-delay: 0s;
+
+}
+
+
+.loading-dots span:nth-child(2) {
+
+    animation-delay: 0.2s;
+
+}
+
+
+.loading-dots span:nth-child(3) {
+
+    animation-delay: 0.4s;
+
+}
+
+
+@keyframes loading {
+
+    0%,
+    80%,
+    100% {
+
+        transform: scale(0.6);
+
+        opacity: 0.5;
+
+    }
+
+    40% {
+
+        transform: scale(1);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* =========================================
+   GET STARTED BUTTON
+========================================= */
+
+.get-started-btn {
+
+    width: 220px;
+
+    height: 52px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: white;
+
+    color: #075dcc;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.18);
+
+    transition: 0.2s ease;
+
+}
+
+
+.get-started-btn:hover {
+
+    background: #f0f6ff;
+
+    color: #075dcc;
+
+    transform: translateY(-2px);
+
+}
+
+
+.get-started-btn i {
+
+    margin-left: 8px;
+
+}
+
+
+/* =========================================
+   TRUSTED TEXT
+========================================= */
+
+.trusted {
+
+    margin-top: 20px;
+
+    font-size: 12px;
+
+    opacity: 0.85;
+
+}
+
+
+.trusted i {
+
+    margin-right: 5px;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 576px) {
+
+    .splash-screen {
+
+        padding: 20px;
+
+    }
+
+
+    .printer-logo {
+
+        width: 90px;
+
+        height: 90px;
+
+        border-radius: 24px;
+
+    }
+
+
+    .printer-logo i {
+
+        font-size: 46px;
+
+    }
+
+
+    .splash-content h1 {
+
+        font-size: 30px;
+
+    }
+
+
+    .description {
+
+        font-size: 14px;
+
+    }
+
+
+    .get-started-btn {
+
+        width: 200px;
+
+    }
+
+}
+/* =========================================
+   LOGIN PAGE
+========================================= */
+
+.login-page {
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px 20px;
+
+    background: #f4f7fb;
+
+}
+
+
+/* =========================================
+   LOGIN CARD
+========================================= */
+
+.login-card {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    padding: 40px 35px 30px;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.10);
+
+}
+
+
+/* =========================================
+   LOGIN LOGO
+========================================= */
+
+.login-logo {
+
+    width: 75px;
+
+    height: 75px;
+
+    margin: 0 auto 22px;
+
+    border-radius: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #e8f1ff;
+
+    color: #0864cf;
+
+}
+
+
+.login-logo i {
+
+    font-size: 38px;
+
+}
+
+
+/* =========================================
+   LOGIN TITLE
+========================================= */
+
+.login-card h2 {
+
+    text-align: center;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    color: #172033;
+
+    margin-bottom: 8px;
+
+}
+
+
+.login-subtitle {
+
+    text-align: center;
+
+    color: #7a8496;
+
+    font-size: 14px;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* =========================================
+   LOGIN ERROR
+========================================= */
+
+.login-error {
+
+    display: none;
+
+    padding: 11px 13px;
+
+    margin-bottom: 18px;
+
+    border-radius: 10px;
+
+    background: #fff1f1;
+
+    color: #dc3545;
+
+    font-size: 13px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================
+   INPUT FIELD
+========================================= */
+
+.login-field {
+
+    margin-bottom: 20px;
+
+}
+
+
+.login-field label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #30394a;
+
+}
+
+
+.input-wrapper {
+
+    position: relative;
+
+    width: 100%;
+
+}
+
+
+.input-wrapper > i {
+
+    position: absolute;
+
+    left: 15px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #7c8799;
+
+    font-size: 17px;
+
+    z-index: 2;
+
+}
+
+
+.input-wrapper input {
+
+    width: 100%;
+
+    height: 50px;
+
+    border: 1px solid #dce2ea;
+
+    border-radius: 11px;
+
+    padding: 0 45px;
+
+    font-size: 14px;
+
+    color: #202838;
+
+    background: #ffffff;
+
+    outline: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.input-wrapper input:focus {
+
+    border-color: #0864cf;
+
+    box-shadow:
+        0 0 0 3px rgba(8, 100, 207, 0.10);
+
+}
+
+
+/* =========================================
+   PASSWORD TOGGLE
+========================================= */
+
+.password-toggle {
+
+    position: absolute;
+
+    right: 12px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    color: #7c8799;
+
+    font-size: 17px;
+
+    padding: 5px;
+
+}
+
+
+.password-toggle:hover {
+
+    color: #0864cf;
+
+}
+
+
+/* =========================================
+   LOGIN BUTTON
+========================================= */
+
+.login-btn {
+
+    width: 100%;
+
+    height: 52px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: #0864cf;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.login-btn:hover {
+
+    background: #0758b8;
+
+    transform: translateY(-1px);
+
+}
+
+
+.login-btn i {
+
+    margin-left: 7px;
+
+}
+
+
+/* =========================================
+   DEMO LOGIN
+========================================= */
+
+.demo-login {
+
+    margin-top: 22px;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: #f5f8fc;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    color: #7a8496;
+
+}
+
+
+.demo-login span {
+
+    margin-right: 5px;
+
+}
+
+
+.demo-login strong {
+
+    color: #0864cf;
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.login-footer {
+
+    margin: 25px 0 0;
+
+    text-align: center;
+
+    font-size: 11px;
+
+    color: #9aa3b2;
+
+}
+
+
+.login-footer span {
+
+    margin: 0 5px;
+
+}
+
+
+/* =========================================
+   MOBILE LOGIN
+========================================= */
+
+@media (max-width: 576px) {
+
+    .login-page {
+
+        padding: 20px 15px;
+
+        align-items: center;
+
+    }
+
+
+    .login-card {
+
+        padding: 32px 22px 25px;
+
+        border-radius: 18px;
+
+    }
+
+
+    .login-card h2 {
+
+        font-size: 22px;
+
+    }
+
+}
+/* =====================================================
+   SELECT PRINTER PAGE
+===================================================== */
+
+.select-printer-page {
+    max-width: 520px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 20px 16px 100px;
+    background: #f6f9fd;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.select-printer-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 25px;
+}
+
+.select-printer-header .back-button {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+    border-radius: 12px;
+
+    color: #1264d6;
+    text-decoration: none;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+    flex-shrink: 0;
+}
+
+.select-printer-header .back-button i {
+    font-size: 20px;
+}
+
+.select-printer-header-content {
+    flex: 1;
+}
+
+.select-printer-header h4 {
+    margin: 2px 0 5px;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    color: #172033;
+}
+
+.select-printer-header p {
+    margin: 0;
+
+    font-size: 13px;
+    color: #7b8495;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   PAGE TITLE
+===================================================== */
+
+.printer-section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 14px;
+}
+
+.printer-section-title h5 {
+    margin: 0;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    color: #172033;
+}
+
+.printer-count {
+    font-size: 11px;
+    color: #8a94a6;
+}
+
+
+/* =====================================================
+   PRINTER LIST
+===================================================== */
+
+.printer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+/* =====================================================
+   PRINTER CARD
+===================================================== */
+
+.printer-card {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    padding: 15px;
+
+    background: #ffffff;
+
+    border: 1px solid #e8edf4;
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 5px 18px rgba(24, 39, 75, 0.06);
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.printer-card:hover {
+    transform: translateY(-2px);
+
+    border-color: #cfe0f7;
+
+    box-shadow:
+        0 9px 24px rgba(24, 39, 75, 0.10);
+}
+
+
+/* =====================================================
+   PRINTER ICON
+===================================================== */
+
+.printer-card-icon {
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #eaf3ff;
+    color: #1264d6;
+}
+
+.printer-card-icon i {
+    font-size: 24px;
+}
+
+
+/* =====================================================
+   PRINTER INFORMATION
+===================================================== */
+
+.printer-card-info {
+    flex: 1;
+
+    margin-left: 14px;
+
+    min-width: 0;
+}
+
+.printer-card-info h6 {
+    margin: 0 0 5px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    color: #172033;
+}
+
+.printer-type {
+    margin: 0 0 4px;
+
+    font-size: 11px;
+
+    color: #7f899a;
+}
+
+.printer-serial {
+    margin: 0;
+
+    font-size: 10px;
+
+    color: #a0a8b5;
+}
+
+
+/* =====================================================
+   ARROW
+===================================================== */
+
+.printer-card-arrow {
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #f4f7fb;
+
+    color: #8a94a6;
+}
+
+.printer-card:hover .printer-card-arrow {
+    background: #eaf3ff;
+    color: #1264d6;
+}
+
+
+/* =====================================================
+   ADD NEW PRINTER
+===================================================== */
+
+.add-printer-card {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 15px;
+
+    background: #ffffff;
+
+    border: 1.5px dashed #b9cde7;
+
+    border-radius: 17px;
+
+    color: #1264d6;
+
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+}
+
+.add-printer-card:hover {
+    background: #f5f9ff;
+
+    border-color: #1264d6;
+
+    transform: translateY(-2px);
+}
+
+.add-printer-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: #eaf3ff;
+
+    color: #1264d6;
+}
+
+.add-printer-icon i {
+    font-size: 21px;
+}
+
+.add-printer-content {
+    flex: 1;
+
+    margin-left: 13px;
+}
+
+.add-printer-content h6 {
+    margin: 0 0 4px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    color: #172033;
+}
+
+.add-printer-content p {
+    margin: 0;
+
+    font-size: 11px;
+
+    color: #8993a5;
+}
+
+.add-printer-arrow {
+    color: #9ba5b5;
+
+    font-size: 16px;
+}
+
+
+/* =====================================================
+   INFORMATION CARD
+===================================================== */
+
+.printer-help-card {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-top: 22px;
+
+    padding: 15px;
+
+    background: #edf6ff;
+
+    border: 1px solid #dcecff;
+
+    border-radius: 15px;
+}
+
+.printer-help-icon {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+
+    color: #1264d6;
+
+    border-radius: 10px;
+}
+
+.printer-help-icon i {
+    font-size: 17px;
+}
+
+.printer-help-content strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 13px;
+
+    color: #172033;
+}
+
+.printer-help-content p {
+    margin: 0;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    color: #718096;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 576px) {
+
+    .select-printer-page {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .select-printer-header h4 {
+        font-size: 21px;
+    }
+
+    .printer-card {
+        padding: 14px;
+    }
+
+    .printer-card-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+}
+/* =====================================================
+   PERSONAL INFORMATION PAGE
+===================================================== */
+
+.personal-page {
+    width: 100%;
+    max-width: 520px;
+    min-height: 100vh;
+
+    margin: 0 auto;
+
+    padding: 20px 16px 40px;
+
+    background: #f5f8fc;
+}
+
+
+/* HEADER */
+
+.personal-header {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 14px;
+
+    margin-bottom: 25px;
+}
+
+.personal-back-btn {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+
+    border-radius: 12px;
+
+    color: #1264d6;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+.personal-back-btn i {
+    font-size: 20px;
+}
+
+.personal-header h4 {
+    margin: 2px 0 4px;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    color: #172033;
+}
+
+.personal-header p {
+    margin: 0;
+
+    font-size: 13px;
+
+    color: #7b8495;
+}
+
+
+/* PROFILE */
+
+.personal-profile {
+    text-align: center;
+
+    margin-bottom: 22px;
+}
+
+.personal-avatar {
+    width: 78px;
+    height: 78px;
+
+    margin: 0 auto 10px;
+
+    border-radius: 50%;
+
+    background: #eaf2ff;
+
+    color: #1264d6;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 5px 18px rgba(20, 101, 216, 0.10);
+}
+
+.personal-avatar i {
+    font-size: 35px;
+}
+
+.personal-profile h5 {
+    margin: 0 0 3px;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    color: #172033;
+}
+
+.personal-profile p {
+    margin: 0;
+
+    font-size: 12px;
+
+    color: #8a94a6;
+}
+
+
+/* FORM CARD */
+
+.personal-card {
+    background: #ffffff;
+
+    border: 1px solid #edf1f7;
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 5px 18px rgba(24, 39, 75, 0.06);
+}
+
+
+/* FIELD */
+
+.personal-field {
+    margin-bottom: 18px;
+}
+
+.personal-field label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #30394a;
+}
+
+
+/* INPUT */
+
+.personal-input {
+    position: relative;
+}
+
+.personal-input i {
+    position: absolute;
+
+    left: 14px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #7c8799;
+
+    font-size: 16px;
+
+    z-index: 2;
+}
+
+.personal-input input {
+    width: 100%;
+
+    height: 48px;
+
+    border: 1px solid #dce2ea;
+
+    border-radius: 11px;
+
+    padding: 0 14px 0 42px;
+
+    font-size: 13px;
+
+    color: #202838;
+
+    background: #ffffff;
+
+    outline: none;
+
+    transition: 0.2s ease;
+}
+
+.personal-input input:focus {
+    border-color: #0864cf;
+
+    box-shadow:
+        0 0 0 3px rgba(8, 100, 207, 0.10);
+}
+
+
+/* SAVE BUTTON */
+
+.personal-save-btn {
+    width: 100%;
+
+    height: 50px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: #0864cf;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.personal-save-btn:hover {
+    background: #0758b8;
+
+    transform: translateY(-1px);
+}
+
+.personal-save-btn i {
+    margin-right: 6px;
+}
+
+
+/* INFORMATION BOX */
+
+.personal-info-box {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-top: 18px;
+
+    padding: 15px;
+
+    background: #edf6ff;
+
+    border: 1px solid #dcecff;
+
+    border-radius: 15px;
+}
+
+.personal-info-icon {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+
+    color: #1264d6;
+
+    border-radius: 10px;
+}
+
+.personal-info-icon i {
+    font-size: 18px;
+}
+
+.personal-info-box strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    font-size: 12px;
+
+    color: #172033;
+}
+
+.personal-info-box p {
+    margin: 0;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    color: #718096;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 576px) {
+
+    .personal-page {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .personal-card {
+        padding: 17px;
+    }
+
+}

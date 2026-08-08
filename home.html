@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Printer Pro - Home</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+
+    <!-- Common CSS -->
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- ================================
+         MAIN CONTENT
+    ================================= -->
+
+    <main class="main-content">
+
+        <!-- HEADER -->
+
+        <div class="home-header">
+
+            <div class="header-text">
+
+                <p class="hello">
+                    Hello, <span id="userName">Admin</span> 👋
+                </p>
+
+                <h5>
+                    How can we help you today?
+                </h5>
+
+            </div>
+
+            <button
+                class="notification"
+                onclick="openNotifications()">
+
+                <i class="bi bi-bell"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- ================================
+             REPAIR BANNER
+        ================================= -->
+
+        <div class="repair-banner">
+
+            <div class="banner-content">
+
+                <span class="banner-small">
+                    PRINTER SERVICE
+                </span>
+
+                <h4>
+                    Doorstep Printer Repair
+                </h4>
+
+                <p>
+                    Quick & reliable service at your doorstep
+                </p>
+
+                <a
+                    href="repair-service.html"
+                    class="book-btn">
+
+                    Book Now
+                    <i class="bi bi-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+            <div class="banner-printer">
+
+                <i class="bi bi-printer-fill"></i>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================================
+             OUR SERVICES
+        ================================= -->
+
+        <div class="section-heading">
+
+            <div>
+                <h4>Our Services</h4>
+                <p>Everything you need for your printer</p>
+            </div>
+
+        </div>
+
+
+        <div class="services-grid">
+
+
+            <!-- REPAIR -->
+
+            <a
+                href="repair-service.html"
+                class="service-card">
+
+                <div class="service-icon blue-icon">
+
+                    <i class="bi bi-tools"></i>
+
+                </div>
+
+                <div class="service-text">
+
+                    <h6>
+                        Repair Service
+                    </h6>
+
+                    <p>
+                        Book a printer repair
+                    </p>
+
+                </div>
+
+                <i class="bi bi-chevron-right service-arrow"></i>
+
+            </a>
+
+
+            <!-- PRODUCTS -->
+
+            <a
+                href="products.html"
+                class="service-card">
+
+                <div class="service-icon purple-icon">
+
+                    <i class="bi bi-droplet"></i>
+
+                </div>
+
+                <div class="service-text">
+
+                    <h6>
+                        Ink & Toner
+                    </h6>
+
+                    <p>
+                        Buy ink & toner
+                    </p>
+
+                </div>
+
+                <i class="bi bi-chevron-right service-arrow"></i>
+
+            </a>
+
+
+            <!-- PARTS -->
+
+            <a
+                href="printer-parts.html"
+                class="service-card">
+
+                <div class="service-icon green-icon">
+
+                    <i class="bi bi-printer"></i>
+
+                </div>
+
+                <div class="service-text">
+
+                    <h6>
+                        Printer Parts
+                    </h6>
+
+                    <p>
+                        Genuine printer parts
+                    </p>
+
+                </div>
+
+                <i class="bi bi-chevron-right service-arrow"></i>
+
+            </a>
+
+
+            <!-- AMC -->
+
+            <a
+                href="amc-plans.html"
+                class="service-card">
+
+                <div class="service-icon orange-icon">
+
+                    <i class="bi bi-shield-check"></i>
+
+                </div>
+
+                <div class="service-text">
+
+                    <h6>
+                        AMC Plans
+                    </h6>
+
+                    <p>
+                        Maintenance plans
+                    </p>
+
+                </div>
+
+                <i class="bi bi-chevron-right service-arrow"></i>
+
+            </a>
+
+        </div>
+
+
+        <!-- ================================
+             WHY CHOOSE US
+        ================================= -->
+
+        <div class="section-heading why-heading">
+
+            <div>
+
+                <h4>
+                    Why Choose Us?
+                </h4>
+
+                <p>
+                    Trusted printer service at your doorstep
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="why-grid">
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    <i class="bi bi-person-check"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        Expert Technicians
+                    </strong>
+
+                    <p>
+                        Trained & verified professionals
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    <i class="bi bi-clock"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        Quick & Reliable
+                    </strong>
+
+                    <p>
+                        On-time doorstep service
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    <i class="bi bi-shield-check"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        Genuine Products
+                    </strong>
+
+                    <p>
+                        Quality printer products & parts
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    <i class="bi bi-credit-card"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        Secure Payments
+                    </strong>
+
+                    <p>
+                        Safe & secure transactions
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================================
+             WHATSAPP SUPPORT
+        ================================= -->
+
+        <div class="whatsapp-card">
+
+            <div>
+
+                <span class="support-label">
+                    NEED HELP?
+                </span>
+
+                <h6>
+                    Chat with our support team
+                </h6>
+
+                <p>
+                    Get instant support on WhatsApp
+                </p>
+
+                <button
+                    class="whatsapp-btn"
+                    onclick="openSupport()">
+
+                    <i class="bi bi-whatsapp"></i>
+
+                    Chat Now
+
+                </button>
+
+            </div>
+
+            <div class="whatsapp-big-icon">
+
+                <i class="bi bi-whatsapp"></i>
+
+            </div>
+
+        </div>
+
+
+        <!-- Bottom spacing -->
+
+        <div class="bottom-space"></div>
+
+    </main>
+
+
+    <!-- ================================
+         BOTTOM NAVIGATION
+    ================================= -->
+
+    <nav class="bottom-nav">
+
+
+        <!-- HOME -->
+
+        <a
+            href="home.html"
+            class="active">
+
+            <i class="bi bi-house-fill"></i>
+
+            <span>
+                Home
+            </span>
+
+        </a>
+
+
+        <!-- CURRENT ORDERS -->
+
+        <a href="current-orders.html">
+
+            <i class="bi bi-truck"></i>
+
+            <span>
+                Current Orders
+            </span>
+
+        </a>
+
+
+        <!-- HISTORY -->
+
+        <a href="history.html">
+
+            <i class="bi bi-clock-history"></i>
+
+            <span>
+                History
+            </span>
+
+        </a>
+
+
+        <!-- PROFILE -->
+
+        <a href="profile.html">
+
+            <i class="bi bi-person"></i>
+
+            <span>
+                Profile
+            </span>
+
+        </a>
+
+    </nav>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+
+</html>

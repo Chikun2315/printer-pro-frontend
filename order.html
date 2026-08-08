@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Printer Pro - Orders</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+
+    <!-- Custom CSS -->
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+</head>
+
+
+<body>
+
+<div class="orders-container">
+
+
+    <!-- ================================
+         HEADER
+    ================================= -->
+
+    <div class="orders-header">
+
+        <div>
+
+            <h4>
+                My Orders
+            </h4>
+
+            <p>
+                Track and manage your orders
+            </p>
+
+        </div>
+
+        <button class="page-icon-btn">
+
+            <i class="bi bi-bell"></i>
+
+        </button>
+
+    </div>
+
+
+    <!-- ================================
+         ORDER FILTER
+    ================================= -->
+
+    <div class="order-tabs">
+
+        <button
+            class="order-tab active"
+            onclick="filterOrders('all', this)">
+
+            All
+
+        </button>
+
+
+        <button
+            class="order-tab"
+            onclick="filterOrders('active', this)">
+
+            Active
+
+        </button>
+
+
+        <button
+            class="order-tab"
+            onclick="filterOrders('completed', this)">
+
+            Completed
+
+        </button>
+
+
+        <button
+            class="order-tab"
+            onclick="filterOrders('cancelled', this)">
+
+            Cancelled
+
+        </button>
+
+    </div>
+
+
+    <!-- ================================
+         ORDER LIST
+    ================================= -->
+
+    <div id="ordersList">
+
+
+        <!-- ORDER 1 -->
+
+        <div
+            class="order-card"
+            data-status="active">
+
+            <div class="order-top">
+
+                <div>
+
+                    <span class="order-label">
+                        Order ID
+                    </span>
+
+                    <strong>
+                        #ORD1256
+                    </strong>
+
+                </div>
+
+                <span class="status-badge processing">
+                    Processing
+                </span>
+
+            </div>
+
+
+            <div class="order-product">
+
+                <div class="product-image-box">
+
+                    <i class="bi bi-printer"></i>
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <h6>
+                        HP 12A Toner Cartridge
+                    </h6>
+
+                    <p>
+                        Black • 1 Item
+                    </p>
+
+                    <strong>
+                        ₹1,250
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="order-details">
+
+                <div>
+
+                    <small>
+                        Order Date
+                    </small>
+
+                    <span>
+                        20 May 2024
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <small>
+                        Delivery
+                    </small>
+
+                    <span>
+                        Expected 24 May
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="order-actions">
+
+                <button class="btn btn-outline-primary">
+
+                    View Details
+
+                </button>
+
+
+                <button class="btn btn-primary">
+
+                    Track Order
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ORDER 2 -->
+
+        <div
+            class="order-card"
+            data-status="completed">
+
+            <div class="order-top">
+
+                <div>
+
+                    <span class="order-label">
+                        Order ID
+                    </span>
+
+                    <strong>
+                        #ORD1198
+                    </strong>
+
+                </div>
+
+                <span class="status-badge completed">
+                    Completed
+                </span>
+
+            </div>
+
+
+            <div class="order-product">
+
+                <div class="product-image-box">
+
+                    <i class="bi bi-droplet"></i>
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <h6>
+                        HP 678 Ink Cartridge
+                    </h6>
+
+                    <p>
+                        Tri-Color • 1 Item
+                    </p>
+
+                    <strong>
+                        ₹890
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="order-details">
+
+                <div>
+
+                    <small>
+                        Order Date
+                    </small>
+
+                    <span>
+                        10 May 2024
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <small>
+                        Delivered
+                    </small>
+
+                    <span>
+                        14 May 2024
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="order-actions">
+
+                <button class="btn btn-outline-primary">
+
+                    View Details
+
+                </button>
+
+
+                <button class="btn btn-outline-success">
+
+                    Buy Again
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ORDER 3 -->
+
+        <div
+            class="order-card"
+            data-status="cancelled">
+
+            <div class="order-top">
+
+                <div>
+
+                    <span class="order-label">
+                        Order ID
+                    </span>
+
+                    <strong>
+                        #ORD1142
+                    </strong>
+
+                </div>
+
+                <span class="status-badge cancelled">
+                    Cancelled
+                </span>
+
+            </div>
+
+
+            <div class="order-product">
+
+                <div class="product-image-box">
+
+                    <i class="bi bi-printer"></i>
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <h6>
+                        Canon 325 Toner
+                    </h6>
+
+                    <p>
+                        Black • 1 Item
+                    </p>
+
+                    <strong>
+                        ₹1,150
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="order-details">
+
+                <div>
+
+                    <small>
+                        Order Date
+                    </small>
+
+                    <span>
+                        05 May 2024
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <small>
+                        Status
+                    </small>
+
+                    <span>
+                        Cancelled
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="order-actions">
+
+                <button class="btn btn-outline-primary">
+
+                    View Details
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================
+         EMPTY MESSAGE
+    ================================= -->
+
+    <div
+        id="noOrders"
+        class="no-orders d-none">
+
+        <i class="bi bi-bag-x"></i>
+
+        <h5>
+            No Orders Found
+        </h5>
+
+        <p>
+            You don't have any orders in this category.
+        </p>
+
+    </div>
+
+
+    <!-- ================================
+         BOTTOM NAVIGATION
+    ================================= -->
+
+    <div class="bottom-nav">
+
+
+        <!-- HOME -->
+
+        <a href="home.html">
+
+            <i class="bi bi-house"></i>
+
+            <span>
+                Home
+            </span>
+
+        </a>
+
+
+        <!-- ORDERS - ACTIVE -->
+
+        <a
+            href="orders.html"
+            class="active">
+
+            <i class="bi bi-bag-check-fill"></i>
+
+            <span>
+                Orders
+            </span>
+
+        </a>
+
+
+        <!-- HISTORY -->
+
+        <a href="history.html">
+
+            <i class="bi bi-clock-history"></i>
+
+            <span>
+                History
+            </span>
+
+        </a>
+
+
+        <!-- PROFILE -->
+
+        <a href="profile.html">
+
+            <i class="bi bi-person"></i>
+
+            <span>
+                Profile
+            </span>
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- APP JS -->
+
+<script src="app.js"></script>
+
+
+<!-- ORDER FILTER JS -->
+
+<script>
+
+function filterOrders(status, button) {
+
+    const orders =
+        document.querySelectorAll(".order-card");
+
+    const noOrders =
+        document.getElementById("noOrders");
+
+
+    /*
+     * Remove active class
+     * from all filter buttons
+     */
+
+    document
+        .querySelectorAll(".order-tab")
+        .forEach(function(tab) {
+
+            tab.classList.remove("active");
+
+        });
+
+
+    /*
+     * Add active class
+     * to selected button
+     */
+
+    button.classList.add("active");
+
+
+    let visibleOrders = 0;
+
+
+    /*
+     * Show / hide orders
+     */
+
+    orders.forEach(function(order) {
+
+        const orderStatus =
+            order.getAttribute("data-status");
+
+
+        if (
+            status === "all" ||
+            orderStatus === status
+        ) {
+
+            order.style.display = "block";
+
+            visibleOrders++;
+
+        } else {
+
+            order.style.display = "none";
+
+        }
+
+    });
+
+
+    /*
+     * Show empty message
+     */
+
+    if (visibleOrders === 0) {
+
+        noOrders.classList.remove("d-none");
+
+    } else {
+
+        noOrders.classList.add("d-none");
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Printer Pro - Payment</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+    <style>
+
+        /* =========================================
+           PAYMENT PAGE
+        ========================================= */
+
+        .repair-payment-page {
+            max-width: 520px;
+            min-height: 100vh;
+            margin: 0 auto;
+            padding: 20px 16px 40px;
+            background: #f5f8fc;
+        }
+
+
+        /* HEADER */
+
+        .payment-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 22px;
+        }
+
+        .payment-back {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #ffffff;
+            color: #1264d6;
+
+            border-radius: 12px;
+
+            text-decoration: none;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,.07);
+        }
+
+        .payment-back i {
+            font-size: 20px;
+        }
+
+        .payment-header h4 {
+            margin: 0;
+            font-size: 22px;
+            font-weight: 700;
+            color: #172033;
+        }
+
+        .payment-header p {
+            margin: 4px 0 0;
+            font-size: 12px;
+            color: #8993a5;
+        }
+
+
+        /* PAYMENT PROGRESS */
+
+        .payment-progress {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 14px;
+            margin-bottom: 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            box-shadow: 0 5px 18px rgba(24,39,75,.06);
+        }
+
+        .payment-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .payment-step-icon {
+            width: 30px;
+            height: 30px;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #1264d6;
+            color: white;
+
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .payment-step small {
+            margin-top: 5px;
+            font-size: 9px;
+            color: #1264d6;
+            font-weight: 600;
+        }
+
+        .payment-progress-line {
+            flex: 1;
+            height: 2px;
+            background: #1264d6;
+            margin: 0 7px;
+        }
+
+
+        /* BOOKING CARD */
+
+        .payment-booking-card {
+            background: #ffffff;
+
+            border-radius: 17px;
+
+            padding: 17px;
+
+            margin-bottom: 15px;
+
+            border: 1px solid #edf1f7;
+
+            box-shadow:
+                0 5px 18px rgba(24,39,75,.06);
+        }
+
+        .payment-card-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            margin-bottom: 15px;
+        }
+
+        .payment-card-icon {
+            width: 40px;
+            height: 40px;
+
+            border-radius: 11px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #eaf2ff;
+            color: #1264d6;
+
+            font-size: 18px;
+        }
+
+        .payment-card-title h6 {
+            margin: 0;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            color: #172033;
+        }
+
+
+        /* BOOKING DETAILS */
+
+        .payment-row {
+            display: flex;
+            justify-content: space-between;
+
+            gap: 15px;
+
+            padding: 9px 0;
+
+            border-bottom: 1px solid #f0f2f6;
+        }
+
+        .payment-row:last-child {
+            border-bottom: none;
+        }
+
+        .payment-row span:first-child {
+            font-size: 11px;
+            color: #8a94a6;
+        }
+
+        .payment-row span:last-child {
+            font-size: 12px;
+            font-weight: 600;
+            color: #172033;
+            text-align: right;
+        }
+
+
+        /* AMOUNT */
+
+        .payment-amount-card {
+            background: #eaf3ff;
+
+            border: 1px solid #d8e8ff;
+
+            border-radius: 17px;
+
+            padding: 17px;
+
+            margin-bottom: 18px;
+        }
+
+        .amount-row {
+            display: flex;
+            justify-content: space-between;
+
+            padding: 6px 0;
+
+            font-size: 12px;
+            color: #667085;
+        }
+
+        .amount-total {
+            display: flex;
+            justify-content: space-between;
+
+            margin-top: 8px;
+            padding-top: 12px;
+
+            border-top: 1px solid #cfe1fa;
+
+            font-size: 15px;
+            font-weight: 700;
+
+            color: #172033;
+        }
+
+        .amount-total strong {
+            color: #1264d6;
+            font-size: 20px;
+        }
+
+
+        /* PAYMENT METHODS */
+
+        .payment-method-title {
+            margin-bottom: 10px;
+
+            font-size: 15px;
+            font-weight: 700;
+
+            color: #172033;
+        }
+
+        .payment-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            margin-bottom: 20px;
+        }
+
+        .payment-method {
+            background: #ffffff;
+
+            border: 1px solid #e3e8ef;
+
+            border-radius: 14px;
+
+            padding: 14px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+
+            cursor: pointer;
+
+            transition: .2s;
+        }
+
+        .payment-method:hover {
+            border-color: #1264d6;
+        }
+
+        .payment-method input {
+            accent-color: #1264d6;
+        }
+
+        .method-icon {
+            width: 40px;
+            height: 40px;
+
+            border-radius: 11px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #edf4ff;
+            color: #1264d6;
+
+            font-size: 18px;
+        }
+
+        .method-text {
+            flex: 1;
+        }
+
+        .method-text strong {
+            display: block;
+
+            font-size: 13px;
+            color: #172033;
+        }
+
+        .method-text small {
+            display: block;
+
+            margin-top: 3px;
+
+            font-size: 10px;
+            color: #8a94a6;
+        }
+
+
+        /* PAY BUTTON */
+
+        .pay-now-btn {
+            width: 100%;
+
+            min-height: 52px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background: #1264d6;
+            color: #ffffff;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            text-decoration: none;
+
+            box-shadow:
+                0 8px 20px rgba(18,100,214,.20);
+
+            transition: .2s;
+        }
+
+        .pay-now-btn:hover {
+            background: #0754bd;
+            color: #ffffff;
+
+            transform: translateY(-1px);
+        }
+
+
+        /* SECURITY */
+
+        .payment-security {
+            text-align: center;
+
+            margin-top: 12px;
+
+            font-size: 10px;
+
+            color: #929aaa;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="repair-payment-page">
+
+
+    <!-- HEADER -->
+
+    <div class="payment-header">
+
+        <a
+            href="repair-summary.html"
+            class="payment-back">
+
+            <i class="bi bi-arrow-left"></i>
+
+        </a>
+
+        <div>
+
+            <h4>
+                Payment
+            </h4>
+
+            <p>
+                Complete payment to confirm your repair
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- PROGRESS -->
+
+    <div class="payment-progress">
+
+        <div class="payment-step">
+
+            <div class="payment-step-icon">
+                <i class="bi bi-check"></i>
+            </div>
+
+            <small>
+                Summary
+            </small>
+
+        </div>
+
+
+        <div class="payment-progress-line"></div>
+
+
+        <div class="payment-step">
+
+            <div class="payment-step-icon">
+                2
+            </div>
+
+            <small>
+                Payment
+            </small>
+
+        </div>
+
+
+        <div class="payment-progress-line"></div>
+
+
+        <div class="payment-step">
+
+            <div class="payment-step-icon">
+                3
+            </div>
+
+            <small>
+                Confirmation
+            </small>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- BOOKING DETAILS -->
+
+    <div class="payment-booking-card">
+
+        <div class="payment-card-title">
+
+            <div class="payment-card-icon">
+
+                <i class="bi bi-tools"></i>
+
+            </div>
+
+            <h6>
+                Repair Booking
+            </h6>
+
+        </div>
+
+
+        <div class="payment-row">
+
+            <span>
+                Printer
+            </span>
+
+            <span>
+                HP LaserJet Pro M126nw
+            </span>
+
+        </div>
+
+
+        <div class="payment-row">
+
+            <span>
+                Problem
+            </span>
+
+            <span>
+                Paper Jam
+            </span>
+
+        </div>
+
+
+        <div class="payment-row">
+
+            <span>
+                Service Date
+            </span>
+
+            <span>
+                25 May 2024
+            </span>
+
+        </div>
+
+
+        <div class="payment-row">
+
+            <span>
+                Time
+            </span>
+
+            <span>
+                10:00 AM - 12:00 PM
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- AMOUNT -->
+
+    <div class="payment-amount-card">
+
+        <div class="amount-row">
+
+            <span>
+                Repair Service
+            </span>
+
+            <span>
+                ₹850
+            </span>
+
+        </div>
+
+
+        <div class="amount-row">
+
+            <span>
+                GST
+            </span>
+
+            <span>
+                ₹153
+            </span>
+
+        </div>
+
+
+        <div class="amount-total">
+
+            <span>
+                Total Amount
+            </span>
+
+            <strong>
+                ₹1,003
+            </strong>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- PAYMENT METHODS -->
+
+    <div class="payment-method-title">
+        Select Payment Method
+    </div>
+
+
+    <div class="payment-methods">
+
+
+        <!-- UPI -->
+
+        <label class="payment-method">
+
+            <input
+                type="radio"
+                name="paymentMethod"
+                value="upi"
+                checked>
+
+            <div class="method-icon">
+
+                <i class="bi bi-phone"></i>
+
+            </div>
+
+            <div class="method-text">
+
+                <strong>
+                    UPI
+                </strong>
+
+                <small>
+                    Google Pay, PhonePe, Paytm and more
+                </small>
+
+            </div>
+
+        </label>
+
+
+
+        <!-- CARD -->
+
+        <label class="payment-method">
+
+            <input
+                type="radio"
+                name="paymentMethod"
+                value="card">
+
+            <div class="method-icon">
+
+                <i class="bi bi-credit-card"></i>
+
+            </div>
+
+            <div class="method-text">
+
+                <strong>
+                    Credit / Debit Card
+                </strong>
+
+                <small>
+                    Visa, Mastercard, RuPay
+                </small>
+
+            </div>
+
+        </label>
+
+
+
+        <!-- NET BANKING -->
+
+        <label class="payment-method">
+
+            <input
+                type="radio"
+                name="paymentMethod"
+                value="netbanking">
+
+            <div class="method-icon">
+
+                <i class="bi bi-bank"></i>
+
+            </div>
+
+            <div class="method-text">
+
+                <strong>
+                    Net Banking
+                </strong>
+
+                <small>
+                    Pay using your bank account
+                </small>
+
+            </div>
+
+        </label>
+
+    </div>
+
+
+
+    <!-- PAY -->
+
+    <a
+        href="repair-success.html"
+        class="pay-now-btn">
+
+        <i class="bi bi-lock-fill"></i>
+
+        Pay ₹1,003
+
+        <i class="bi bi-arrow-right"></i>
+
+    </a>
+
+
+    <p class="payment-security">
+
+        <i class="bi bi-shield-check"></i>
+
+        Secure payment • Your payment information is protected
+
+    </p>
+
+
+</div>
+
+
+</body>
+
+</html>

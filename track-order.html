@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Printer Pro - Track Order</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #e9eef5;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #172033;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 520px;
+            min-height: 100vh;
+            margin: auto;
+            background: #f5f8fc;
+            padding: 20px 16px 40px;
+        }
+
+        /* HEADER */
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            margin-bottom: 22px;
+        }
+
+        .back-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: #ffffff;
+            color: #1264d6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+        }
+
+        .header h4 {
+            margin: 0;
+            font-size: 21px;
+            font-weight: 700;
+        }
+
+        .header p {
+            margin: 3px 0 0;
+            font-size: 12px;
+            color: #8993a5;
+        }
+
+        /* ORDER SUMMARY */
+
+        .summary {
+            background: #1264d6;
+            color: white;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 18px;
+        }
+
+        .summary-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .summary small {
+            opacity: 0.75;
+            font-size: 10px;
+        }
+
+        .summary strong {
+            display: block;
+            margin-top: 4px;
+            font-size: 17px;
+        }
+
+        .summary-status {
+            background: rgba(255,255,255,0.16);
+            padding: 7px 11px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        /* DELIVERY */
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #edf1f7;
+            box-shadow: 0 5px 18px rgba(24,39,75,0.06);
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        /* TIMELINE */
+
+        .timeline {
+            position: relative;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 15px;
+            position: relative;
+            min-height: 78px;
+        }
+
+        .timeline-icon-area {
+            width: 35px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .timeline-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #eaf2ff;
+            color: #1264d6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            font-size: 14px;
+        }
+
+        .timeline-item.completed .timeline-icon {
+            background: #1264d6;
+            color: white;
+        }
+
+        .timeline-item.current .timeline-icon {
+            background: #1264d6;
+            color: white;
+            box-shadow: 0 0 0 6px #eaf2ff;
+        }
+
+        .timeline-line {
+            width: 2px;
+            flex: 1;
+            background: #dfe5ed;
+        }
+
+        .timeline-item.completed .timeline-line {
+            background: #1264d6;
+        }
+
+        .timeline-content {
+            padding-top: 2px;
+        }
+
+        .timeline-content h6 {
+            margin: 0 0 5px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .timeline-content p {
+            margin: 0;
+            color: #8993a5;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .timeline-content .date {
+            display: block;
+            margin-top: 5px;
+            color: #1264d6;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        /* DELIVERY ADDRESS */
+
+        .address {
+            display: flex;
+            gap: 12px;
+        }
+
+        .address-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: #eaf2ff;
+            color: #1264d6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .address h6 {
+            margin: 0 0 5px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .address p {
+            margin: 0;
+            color: #8993a5;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        /* HELP */
+
+        .help {
+            text-align: center;
+        }
+
+        .help i {
+            font-size: 28px;
+            color: #1264d6;
+        }
+
+        .help h6 {
+            margin: 8px 0 5px;
+            font-size: 14px;
+        }
+
+        .help p {
+            margin: 0 0 15px;
+            color: #8993a5;
+            font-size: 11px;
+        }
+
+        .support-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: #1264d6;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <a href="order-details.html" class="back-btn">
+
+            <i class="bi bi-arrow-left"></i>
+
+        </a>
+
+        <div>
+
+            <h4>
+                Track Order
+            </h4>
+
+            <p>
+                Follow your delivery status
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ORDER SUMMARY -->
+
+    <div class="summary">
+
+        <div class="summary-top">
+
+            <div>
+
+                <small>
+                    Order ID
+                </small>
+
+                <strong>
+                    #ORD1256
+                </strong>
+
+            </div>
+
+            <span class="summary-status">
+                Processing
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- DELIVERY TRACKING -->
+
+    <div class="card">
+
+        <div class="card-title">
+            Delivery Status
+        </div>
+
+
+        <div class="timeline">
+
+
+            <!-- ORDERED -->
+
+            <div class="timeline-item completed">
+
+                <div class="timeline-icon-area">
+
+                    <div class="timeline-icon">
+
+                        <i class="bi bi-check"></i>
+
+                    </div>
+
+                    <div class="timeline-line"></div>
+
+                </div>
+
+                <div class="timeline-content">
+
+                    <h6>
+                        Order Placed
+                    </h6>
+
+                    <p>
+                        Your order has been successfully placed.
+                    </p>
+
+                    <span class="date">
+                        20 May 2024 • 10:30 AM
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- PACKED -->
+
+            <div class="timeline-item completed">
+
+                <div class="timeline-icon-area">
+
+                    <div class="timeline-icon">
+
+                        <i class="bi bi-box-seam"></i>
+
+                    </div>
+
+                    <div class="timeline-line"></div>
+
+                </div>
+
+                <div class="timeline-content">
+
+                    <h6>
+                        Order Packed
+                    </h6>
+
+                    <p>
+                        Your product has been packed and is ready for shipment.
+                    </p>
+
+                    <span class="date">
+                        21 May 2024 • 02:15 PM
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- SHIPPED -->
+
+            <div class="timeline-item current">
+
+                <div class="timeline-icon-area">
+
+                    <div class="timeline-icon">
+
+                        <i class="bi bi-truck"></i>
+
+                    </div>
+
+                    <div class="timeline-line"></div>
+
+                </div>
+
+                <div class="timeline-content">
+
+                    <h6>
+                        Out for Shipment
+                    </h6>
+
+                    <p>
+                        Your order is being prepared for delivery.
+                    </p>
+
+                    <span class="date">
+                        Current Status
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- DELIVERED -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-icon-area">
+
+                    <div class="timeline-icon">
+
+                        <i class="bi bi-house-check"></i>
+
+                    </div>
+
+                </div>
+
+                <div class="timeline-content">
+
+                    <h6>
+                        Delivered
+                    </h6>
+
+                    <p>
+                        Your order will be delivered to your address.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- DELIVERY ADDRESS -->
+
+    <div class="card">
+
+        <div class="card-title">
+            Delivery Address
+        </div>
+
+        <div class="address">
+
+            <div class="address-icon">
+
+                <i class="bi bi-geo-alt"></i>
+
+            </div>
+
+            <div>
+
+                <h6>
+                    Home
+                </h6>
+
+                <p>
+                    Sankarsana Sahoo<br>
+                    Bhubaneswar, Odisha<br>
+                    India - 751024
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SUPPORT -->
+
+    <div class="card help">
+
+        <i class="bi bi-headset"></i>
+
+        <h6>
+            Need help with your order?
+        </h6>
+
+        <p>
+            Contact our support team for assistance.
+        </p>
+
+        <a href="support.html" class="support-btn">
+
+            <i class="bi bi-headset"></i>
+
+            Contact Support
+
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

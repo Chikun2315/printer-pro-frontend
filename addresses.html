@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Printer Pro - My Addresses</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f5f8fc;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #172033;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .address-page {
+            width: 100%;
+            max-width: 520px;
+            min-height: 100vh;
+            margin: auto;
+            padding: 20px 16px 100px;
+        }
+
+        /* HEADER */
+
+        .page-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 25px;
+        }
+
+        .back-btn {
+            width: 44px;
+            height: 44px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #ffffff;
+            color: #1264d6;
+
+            border-radius: 13px;
+
+            box-shadow: 0 5px 18px rgba(24, 39, 75, 0.08);
+        }
+
+        .back-btn i {
+            font-size: 20px;
+        }
+
+        .page-header h4 {
+            margin: 0 0 4px;
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .page-header p {
+            margin: 0;
+            font-size: 13px;
+            color: #7d8798;
+        }
+
+        /* SECTION */
+
+        .section-title {
+            margin-bottom: 15px;
+        }
+
+        .section-title h5 {
+            margin: 0 0 4px;
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .section-title p {
+            margin: 0;
+            font-size: 12px;
+            color: #8993a4;
+        }
+
+        /* ADDRESS CARD */
+
+        .address-card {
+            background: #ffffff;
+
+            border: 1px solid #e5eaf1;
+            border-radius: 17px;
+
+            padding: 16px;
+
+            margin-bottom: 13px;
+
+            display: flex;
+            align-items: flex-start;
+            gap: 13px;
+
+            box-shadow: 0 5px 18px rgba(24, 39, 75, 0.05);
+
+            position: relative;
+        }
+
+        .address-icon {
+            width: 45px;
+            height: 45px;
+
+            flex-shrink: 0;
+
+            border-radius: 13px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #eaf2ff;
+            color: #1264d6;
+        }
+
+        .address-icon i {
+            font-size: 20px;
+        }
+
+        .address-content {
+            flex: 1;
+            padding-right: 5px;
+        }
+
+        .address-name {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            margin-bottom: 7px;
+        }
+
+        .address-name strong {
+            font-size: 15px;
+        }
+
+        .default-badge {
+            background: #e9f8ef;
+            color: #1b9b62;
+
+            padding: 4px 7px;
+
+            border-radius: 20px;
+
+            font-size: 8px;
+            font-weight: 700;
+        }
+
+        .address-text {
+            margin: 0;
+
+            font-size: 12px;
+            line-height: 1.6;
+
+            color: #707b8d;
+        }
+
+        .phone {
+            margin-top: 7px;
+
+            font-size: 11px;
+            color: #566173;
+        }
+
+        /* EDIT BUTTON */
+
+        .edit-btn {
+            width: 34px;
+            height: 34px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background: #f0f5fc;
+            color: #1264d6;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            cursor: pointer;
+        }
+
+        .edit-btn i {
+            font-size: 15px;
+        }
+
+        /* ADD ADDRESS */
+
+        .add-address {
+            width: 100%;
+            height: 52px;
+
+            margin-top: 8px;
+
+            border: 1.5px dashed #b9c9df;
+
+            border-radius: 14px;
+
+            background: #f8fbff;
+
+            color: #1264d6;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .add-address:hover {
+            background: #edf5ff;
+        }
+
+        .add-address i {
+            font-size: 18px;
+        }
+
+        /* INFO */
+
+        .info-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+
+            margin-top: 20px;
+
+            padding: 14px;
+
+            border-radius: 14px;
+
+            background: #edf6ff;
+
+            border: 1px solid #dcecff;
+        }
+
+        .info-icon {
+            color: #1264d6;
+            font-size: 18px;
+        }
+
+        .info-card p {
+            margin: 0;
+
+            font-size: 11px;
+            line-height: 1.5;
+
+            color: #718096;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 360px) {
+
+            .address-page {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .page-header h4 {
+                font-size: 20px;
+            }
+
+            .address-card {
+                padding: 14px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="address-page">
+
+
+    <!-- HEADER -->
+
+    <div class="page-header">
+
+        <a
+            href="profile.html"
+            class="back-btn">
+
+            <i class="bi bi-arrow-left"></i>
+
+        </a>
+
+        <div>
+
+            <h4>
+                My Addresses
+            </h4>
+
+            <p>
+                Manage your service addresses
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- TITLE -->
+
+    <div class="section-title">
+
+        <h5>
+            Saved Addresses
+        </h5>
+
+        <p>
+            Select an address for your printer service
+        </p>
+
+    </div>
+
+
+    <!-- HOME ADDRESS -->
+
+    <div class="address-card">
+
+
+        <div class="address-icon">
+
+            <i class="bi bi-house-door"></i>
+
+        </div>
+
+
+        <div class="address-content">
+
+            <div class="address-name">
+
+                <strong>
+                    Home
+                </strong>
+
+                <span class="default-badge">
+                    DEFAULT
+                </span>
+
+            </div>
+
+
+            <p class="address-text">
+
+                123, Main Road,<br>
+                Bhubaneswar, Odisha - 751001
+
+            </p>
+
+
+            <div class="phone">
+
+                <i class="bi bi-telephone"></i>
+
+                &nbsp; +91 98765 43210
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="edit-btn"
+            onclick="editAddress('Home')">
+
+            <i class="bi bi-pencil"></i>
+
+        </button>
+
+    </div>
+
+
+    <!-- OFFICE ADDRESS -->
+
+    <div class="address-card">
+
+
+        <div class="address-icon">
+
+            <i class="bi bi-building"></i>
+
+        </div>
+
+
+        <div class="address-content">
+
+            <div class="address-name">
+
+                <strong>
+                    Office
+                </strong>
+
+            </div>
+
+
+            <p class="address-text">
+
+                Plot No. 45, Technology Park,<br>
+                Bhubaneswar, Odisha - 751024
+
+            </p>
+
+
+            <div class="phone">
+
+                <i class="bi bi-telephone"></i>
+
+                &nbsp; +91 98765 43210
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="edit-btn"
+            onclick="editAddress('Office')">
+
+            <i class="bi bi-pencil"></i>
+
+        </button>
+
+    </div>
+
+
+    <!-- ADD NEW ADDRESS -->
+
+    <a
+        href="#"
+        class="add-address"
+        onclick="addNewAddress(event)">
+
+        <i class="bi bi-plus-circle"></i>
+
+        Add New Address
+
+    </a>
+
+
+    <!-- INFORMATION -->
+
+    <div class="info-card">
+
+        <div class="info-icon">
+
+            <i class="bi bi-info-circle"></i>
+
+        </div>
+
+        <p>
+
+            Your address will be used by our technician
+            for doorstep printer repair service.
+
+        </p>
+
+    </div>
+
+
+</div>
+
+
+<script>
+
+    function addNewAddress(event) {
+
+        event.preventDefault();
+
+        alert("Add New Address screen will be added next.");
+
+    }
+
+
+    function editAddress(addressName) {
+
+        alert("Edit " + addressName + " address.");
+
+    }
+
+</script>
+
+
+</body>
+
+</html>

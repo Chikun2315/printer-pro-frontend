@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Printer Pro - Notifications</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #172033;
+        }
+
+        .notifications-page {
+            width: 100%;
+            max-width: 520px;
+            min-height: 100vh;
+            margin: 0 auto;
+            padding: 20px 16px 90px;
+            background: #f5f8fc;
+        }
+
+        /* HEADER */
+
+        .notifications-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 25px;
+        }
+
+        .back-btn {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #ffffff;
+            color: #1264d6;
+
+            border-radius: 12px;
+
+            text-decoration: none;
+
+            box-shadow:
+                0 4px 15px rgba(0, 0, 0, 0.07);
+        }
+
+        .back-btn i {
+            font-size: 20px;
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+        .header-content h4 {
+            margin: 0 0 4px;
+
+            font-size: 22px;
+            font-weight: 700;
+
+            color: #172033;
+        }
+
+        .header-content p {
+            margin: 0;
+
+            font-size: 12px;
+            color: #8993a5;
+        }
+
+        /* CLEAR BUTTON */
+
+        .clear-btn {
+            border: none;
+            background: transparent;
+
+            color: #1264d6;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            cursor: pointer;
+        }
+
+        /* SECTION */
+
+        .notification-section {
+            margin-bottom: 20px;
+        }
+
+        .section-label {
+            margin-bottom: 10px;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            color: #8993a5;
+
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+        }
+
+        /* NOTIFICATION CARD */
+
+        .notification-card {
+            display: flex;
+            align-items: flex-start;
+
+            gap: 13px;
+
+            padding: 15px;
+
+            margin-bottom: 10px;
+
+            background: #ffffff;
+
+            border: 1px solid #edf1f7;
+
+            border-radius: 16px;
+
+            box-shadow:
+                0 5px 18px rgba(24, 39, 75, 0.05);
+        }
+
+        .notification-card.unread {
+            background: #f8fbff;
+            border-color: #dceaff;
+        }
+
+        /* ICON */
+
+        .notification-icon {
+            width: 45px;
+            height: 45px;
+
+            flex-shrink: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 13px;
+
+            font-size: 20px;
+        }
+
+        .notification-icon.blue {
+            background: #eaf3ff;
+            color: #1264d6;
+        }
+
+        .notification-icon.green {
+            background: #e9f8ef;
+            color: #21a45b;
+        }
+
+        .notification-icon.orange {
+            background: #fff2e6;
+            color: #ed8a27;
+        }
+
+        .notification-icon.purple {
+            background: #f2ecff;
+            color: #7047d8;
+        }
+
+        /* CONTENT */
+
+        .notification-content {
+            flex: 1;
+        }
+
+        .notification-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 8px;
+
+            margin-bottom: 5px;
+        }
+
+        .notification-title strong {
+            font-size: 14px;
+            color: #172033;
+        }
+
+        .notification-time {
+            flex-shrink: 0;
+
+            font-size: 10px;
+            color: #a0a8b5;
+        }
+
+        .notification-content p {
+            margin: 0;
+
+            font-size: 12px;
+            line-height: 1.5;
+
+            color: #7b8495;
+        }
+
+        /* UNREAD DOT */
+
+        .unread-dot {
+            width: 7px;
+            height: 7px;
+
+            flex-shrink: 0;
+
+            margin-top: 5px;
+
+            border-radius: 50%;
+
+            background: #1264d6;
+        }
+
+        /* EMPTY STATE */
+
+        .empty-notifications {
+            display: none;
+
+            padding: 50px 20px;
+
+            text-align: center;
+
+            background: #ffffff;
+
+            border-radius: 18px;
+
+            border: 1px solid #edf1f7;
+        }
+
+        .empty-notifications i {
+            font-size: 45px;
+            color: #c7d0dd;
+        }
+
+        .empty-notifications h6 {
+            margin-top: 15px;
+            margin-bottom: 5px;
+
+            font-size: 15px;
+        }
+
+        .empty-notifications p {
+            margin: 0;
+
+            color: #8993a5;
+            font-size: 12px;
+        }
+
+        /* BOTTOM NAV */
+
+        .bottom-nav {
+            position: fixed;
+
+            bottom: 0;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: 100%;
+            max-width: 520px;
+
+            height: 70px;
+
+            background: rgba(255, 255, 255, 0.97);
+
+            border-top: 1px solid #e8edf4;
+
+            box-shadow:
+                0 -5px 20px rgba(0, 0, 0, 0.06);
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            z-index: 1000;
+        }
+
+        .bottom-nav a {
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 5px;
+
+            color: #969daa;
+
+            font-size: 10px;
+            font-weight: 500;
+
+            text-decoration: none;
+        }
+
+        .bottom-nav a i {
+            font-size: 21px;
+        }
+
+        .bottom-nav a.active {
+            color: #1264d6;
+            font-weight: 700;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 360px) {
+
+            .notifications-page {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .header-content h4 {
+                font-size: 20px;
+            }
+
+            .clear-btn {
+                font-size: 11px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="notifications-page">
+
+
+    <!-- HEADER -->
+
+    <div class="notifications-header">
+
+        <a
+            href="profile.html"
+            class="back-btn">
+
+            <i class="bi bi-arrow-left"></i>
+
+        </a>
+
+
+        <div class="header-content">
+
+            <h4>
+                Notifications
+            </h4>
+
+            <p>
+                Stay updated with your orders and services
+            </p>
+
+        </div>
+
+
+        <button
+            class="clear-btn"
+            onclick="clearNotifications()">
+
+            Clear
+
+        </button>
+
+    </div>
+
+
+
+    <!-- TODAY -->
+
+    <div
+        class="notification-section"
+        id="todaySection">
+
+        <div class="section-label">
+            Today
+        </div>
+
+
+        <!-- NOTIFICATION 1 -->
+
+        <div class="notification-card unread">
+
+            <div class="notification-icon blue">
+
+                <i class="bi bi-truck"></i>
+
+            </div>
+
+
+            <div class="notification-content">
+
+                <div class="notification-title">
+
+                    <strong>
+                        Order Shipped
+                    </strong>
+
+                    <span class="notification-time">
+                        10 min ago
+                    </span>
+
+                </div>
+
+
+                <p>
+                    Your order #ORD1262 has been shipped
+                    and is on the way.
+                </p>
+
+            </div>
+
+
+            <span class="unread-dot"></span>
+
+        </div>
+
+
+
+        <!-- NOTIFICATION 2 -->
+
+        <div class="notification-card unread">
+
+            <div class="notification-icon green">
+
+                <i class="bi bi-check-circle"></i>
+
+            </div>
+
+
+            <div class="notification-content">
+
+                <div class="notification-title">
+
+                    <strong>
+                        Repair Confirmed
+                    </strong>
+
+                    <span class="notification-time">
+                        2 hrs ago
+                    </span>
+
+                </div>
+
+
+                <p>
+                    Your printer repair request has
+                    been successfully confirmed.
+                </p>
+
+            </div>
+
+
+            <span class="unread-dot"></span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- YESTERDAY -->
+
+    <div
+        class="notification-section"
+        id="yesterdaySection">
+
+        <div class="section-label">
+            Yesterday
+        </div>
+
+
+        <!-- NOTIFICATION 3 -->
+
+        <div class="notification-card">
+
+            <div class="notification-icon orange">
+
+                <i class="bi bi-calendar-check"></i>
+
+            </div>
+
+
+            <div class="notification-content">
+
+                <div class="notification-title">
+
+                    <strong>
+                        Repair Scheduled
+                    </strong>
+
+                    <span class="notification-time">
+                        Yesterday
+                    </span>
+
+                </div>
+
+
+                <p>
+                    Your printer repair has been scheduled
+                    for tomorrow at 10:00 AM.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NOTIFICATION 4 -->
+
+        <div class="notification-card">
+
+            <div class="notification-icon purple">
+
+                <i class="bi bi-tag"></i>
+
+            </div>
+
+
+            <div class="notification-content">
+
+                <div class="notification-title">
+
+                    <strong>
+                        Special Offer
+                    </strong>
+
+                    <span class="notification-time">
+                        Yesterday
+                    </span>
+
+                </div>
+
+
+                <p>
+                    Get special discounts on selected
+                    printer cartridges and parts.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- EMPTY STATE -->
+
+    <div
+        class="empty-notifications"
+        id="emptyNotifications">
+
+        <i class="bi bi-bell-slash"></i>
+
+        <h6>
+            No Notifications
+        </h6>
+
+        <p>
+            You're all caught up!
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- BOTTOM NAVIGATION -->
+
+<div class="bottom-nav">
+
+
+    <a href="home.html">
+
+        <i class="bi bi-house"></i>
+
+        <span>
+            Home
+        </span>
+
+    </a>
+
+
+    <a href="current-orders.html">
+
+        <i class="bi bi-truck"></i>
+
+        <span>
+            Current Orders
+        </span>
+
+    </a>
+
+
+    <a href="history.html">
+
+        <i class="bi bi-clock-history"></i>
+
+        <span>
+            History
+        </span>
+
+    </a>
+
+
+    <a
+        href="profile.html"
+        class="active">
+
+        <i class="bi bi-person-fill"></i>
+
+        <span>
+            Profile
+        </span>
+
+    </a>
+
+</div>
+
+
+
+<script>
+
+    function clearNotifications() {
+
+        const cards =
+            document.querySelectorAll(
+                ".notification-card"
+            );
+
+        cards.forEach(function(card) {
+
+            card.style.display = "none";
+
+        });
+
+
+        document.getElementById(
+            "todaySection"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "yesterdaySection"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "emptyNotifications"
+        ).style.display = "block";
+
+    }
+
+</script>
+
+
+</body>
+
+</html>

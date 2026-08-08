@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Printer Pro - Select Printer</title>
+
+
+    <!-- Bootstrap -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+
+    <!-- Bootstrap Icons -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+
+
+    <!-- Common CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="select-printer-page">
+
+
+    <!-- =====================================
+         HEADER
+    ====================================== -->
+
+    <div class="select-printer-header">
+
+        <a
+            href="repair-service.html"
+            class="back-button">
+
+            <i class="bi bi-arrow-left"></i>
+
+        </a>
+
+
+        <div class="select-printer-header-content">
+
+            <h4>
+                Select Printer
+            </h4>
+
+            <p>
+                Choose the printer you need help with
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         MY PRINTERS TITLE
+    ====================================== -->
+
+    <div class="printer-section-title">
+
+        <h5>
+            My Printers
+        </h5>
+
+        <span class="printer-count">
+            2 Printers
+        </span>
+
+    </div>
+
+
+
+    <!-- =====================================
+         PRINTER LIST
+    ====================================== -->
+
+    <div class="printer-list">
+
+
+        <!-- PRINTER 1 -->
+
+        <div
+            class="printer-card"
+            onclick="selectPrinter('HP LaserJet Pro M126nw')">
+
+
+            <div class="printer-card-icon">
+
+                <i class="bi bi-printer"></i>
+
+            </div>
+
+
+            <div class="printer-card-info">
+
+                <h6>
+                    HP LaserJet Pro M126nw
+                </h6>
+
+                <p class="printer-type">
+                    Laser Printer
+                </p>
+
+                <p class="printer-serial">
+                    Serial No: HP126789
+                </p>
+
+            </div>
+
+
+            <div class="printer-card-arrow">
+
+                <i class="bi bi-chevron-right"></i>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRINTER 2 -->
+
+        <div
+            class="printer-card"
+            onclick="selectPrinter('Canon G2010')">
+
+
+            <div class="printer-card-icon">
+
+                <i class="bi bi-printer"></i>
+
+            </div>
+
+
+            <div class="printer-card-info">
+
+                <h6>
+                    Canon G2010
+                </h6>
+
+                <p class="printer-type">
+                    Inkjet Printer
+                </p>
+
+                <p class="printer-serial">
+                    Serial No: CG201045
+                </p>
+
+            </div>
+
+
+            <div class="printer-card-arrow">
+
+                <i class="bi bi-chevron-right"></i>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         ADD NEW PRINTER
+    ====================================== -->
+
+    <a
+        href="add-printer.html"
+        class="add-printer-card">
+
+
+        <div class="add-printer-icon">
+
+            <i class="bi bi-plus-lg"></i>
+
+        </div>
+
+
+        <div class="add-printer-content">
+
+            <h6>
+                Add New Printer
+            </h6>
+
+            <p>
+                Add another printer to your account
+            </p>
+
+        </div>
+
+
+        <div class="add-printer-arrow">
+
+            <i class="bi bi-chevron-right"></i>
+
+        </div>
+
+    </a>
+
+
+
+    <!-- =====================================
+         HELP CARD
+    ====================================== -->
+
+    <div class="printer-help-card">
+
+
+        <div class="printer-help-icon">
+
+            <i class="bi bi-info-circle"></i>
+
+        </div>
+
+
+        <div class="printer-help-content">
+
+            <strong>
+                Can't find your printer?
+            </strong>
+
+            <p>
+                Add your printer manually to continue
+                with the repair booking.
+            </p>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+function selectPrinter(printerName) {
+
+    /*
+     * Save selected printer.
+     * Later this can be connected to your backend.
+     */
+
+    localStorage.setItem(
+        "selectedPrinter",
+        printerName
+    );
+
+
+    /*
+     * Continue to repair problem screen.
+     */
+
+    window.location.href = "repair-problem.html";
+
+}
+
+</script>
+
+
+</body>
+
+</html>

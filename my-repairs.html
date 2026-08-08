@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Printer Pro - My Repairs</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f5f8fc;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #172033;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .repairs-page {
+            width: 100%;
+            max-width: 520px;
+            min-height: 100vh;
+            margin: 0 auto;
+            padding: 20px 16px 40px;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .page-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 25px;
+        }
+
+        .back-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 13px;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1264d6;
+            box-shadow: 0 5px 18px rgba(24, 39, 75, 0.08);
+            flex-shrink: 0;
+        }
+
+        .back-btn i {
+            font-size: 20px;
+        }
+
+        .page-header h4 {
+            margin: 0 0 4px;
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .page-header p {
+            margin: 0;
+            font-size: 13px;
+            color: #7d8798;
+        }
+
+        /* =========================
+           SUMMARY
+        ========================= */
+
+        .summary-card {
+            background: #1264d6;
+            color: white;
+            border-radius: 18px;
+            padding: 18px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 10px 25px rgba(20, 101, 216, 0.20);
+        }
+
+        .summary-card strong {
+            display: block;
+            font-size: 26px;
+            margin-bottom: 3px;
+        }
+
+        .summary-card span {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .summary-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 15px;
+            background: rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+        }
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        .section-title {
+            margin-bottom: 13px;
+        }
+
+        .section-title h5 {
+            margin: 0;
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        /* =========================
+           REPAIR CARD
+        ========================= */
+
+        .repair-card {
+            background: #ffffff;
+            border: 1px solid #e7ebf2;
+            border-radius: 18px;
+            padding: 16px;
+            margin-bottom: 14px;
+            box-shadow: 0 5px 18px rgba(24,39,75,0.06);
+        }
+
+        .repair-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .repair-id {
+            font-size: 11px;
+            color: #8a94a6;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .repair-top h6 {
+            margin: 0;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .status {
+            padding: 6px 9px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .status-progress {
+            background: #fff3df;
+            color: #d98200;
+        }
+
+        .status-completed {
+            background: #e9f8ef;
+            color: #1b9b62;
+        }
+
+        /* =========================
+           REPAIR INFO
+        ========================= */
+
+        .repair-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: #f7f9fc;
+            border-radius: 13px;
+            margin-bottom: 13px;
+        }
+
+        .repair-icon {
+            width: 43px;
+            height: 43px;
+            border-radius: 12px;
+            background: #eaf2ff;
+            color: #1264d6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .repair-info strong {
+            display: block;
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+
+        .repair-info span {
+            font-size: 11px;
+            color: #818b9c;
+        }
+
+        /* =========================
+           DETAILS
+        ========================= */
+
+        .repair-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .detail-box {
+            background: #fafbfc;
+            border-radius: 11px;
+            padding: 10px;
+        }
+
+        .detail-box small {
+            display: block;
+            color: #8a94a6;
+            font-size: 9px;
+            margin-bottom: 4px;
+        }
+
+        .detail-box span {
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .view-btn {
+            width: 100%;
+            height: 42px;
+            border: 1px solid #d6e2f4;
+            border-radius: 10px;
+            background: #f5f9ff;
+            color: #1264d6;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .view-btn:hover {
+            background: #eaf2ff;
+        }
+
+        /* =========================
+           EMPTY SUPPORT
+        ========================= */
+
+        .support-card {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 15px;
+            background: #edf6ff;
+            border: 1px solid #dcecff;
+            display: flex;
+            gap: 12px;
+        }
+
+        .support-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: white;
+            color: #1264d6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .support-card strong {
+            display: block;
+            font-size: 12px;
+            margin-bottom: 3px;
+        }
+
+        .support-card p {
+            margin: 0;
+            font-size: 10px;
+            line-height: 1.5;
+            color: #718096;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="repairs-page">
+
+    <!-- HEADER -->
+
+    <div class="page-header">
+
+        <a href="profile.html" class="back-btn">
+            <i class="bi bi-arrow-left"></i>
+        </a>
+
+        <div>
+
+            <h4>My Repairs</h4>
+
+            <p>
+                View and track your repair services
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- SUMMARY -->
+
+    <div class="summary-card">
+
+        <div>
+
+            <strong>2</strong>
+
+            <span>
+                Total Repair Requests
+            </span>
+
+        </div>
+
+        <div class="summary-icon">
+
+            <i class="bi bi-tools"></i>
+
+        </div>
+
+    </div>
+
+
+    <!-- ACTIVE REPAIRS -->
+
+    <div class="section-title">
+
+        <h5>
+            Repair Requests
+        </h5>
+
+    </div>
+
+
+    <!-- REPAIR 1 -->
+
+    <div class="repair-card">
+
+        <div class="repair-top">
+
+            <div>
+
+                <span class="repair-id">
+                    Repair ID #REP1025
+                </span>
+
+                <h6>
+                    Printer Not Printing
+                </h6>
+
+            </div>
+
+            <span class="status status-progress">
+                In Progress
+            </span>
+
+        </div>
+
+
+        <div class="repair-info">
+
+            <div class="repair-icon">
+
+                <i class="bi bi-printer"></i>
+
+            </div>
+
+            <div>
+
+                <strong>
+                    HP LaserJet Pro M126nw
+                </strong>
+
+                <span>
+                    Laser Printer
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="repair-details">
+
+            <div class="detail-box">
+
+                <small>
+                    SERVICE DATE
+                </small>
+
+                <span>
+                    25 Aug 2026
+                </span>
+
+            </div>
+
+            <div class="detail-box">
+
+                <small>
+                    TIME SLOT
+                </small>
+
+                <span>
+                    10:00 AM - 12:00 PM
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="view-btn"
+            onclick="viewRepair('REP1025')">
+
+            View Repair Details
+            <i class="bi bi-arrow-right"></i>
+
+        </button>
+
+    </div>
+
+
+    <!-- REPAIR 2 -->
+
+    <div class="repair-card">
+
+        <div class="repair-top">
+
+            <div>
+
+                <span class="repair-id">
+                    Repair ID #REP1018
+                </span>
+
+                <h6>
+                    Ink Cartridge Issue
+                </h6>
+
+            </div>
+
+            <span class="status status-completed">
+                Completed
+            </span>
+
+        </div>
+
+
+        <div class="repair-info">
+
+            <div class="repair-icon">
+
+                <i class="bi bi-droplet"></i>
+
+            </div>
+
+            <div>
+
+                <strong>
+                    Canon G2010
+                </strong>
+
+                <span>
+                    Inkjet Printer
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="repair-details">
+
+            <div class="detail-box">
+
+                <small>
+                    SERVICE DATE
+                </small>
+
+                <span>
+                    18 Aug 2026
+                </span>
+
+            </div>
+
+            <div class="detail-box">
+
+                <small>
+                    SERVICE TYPE
+                </small>
+
+                <span>
+                    Printer Repair
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="view-btn"
+            onclick="viewRepair('REP1018')">
+
+            View Repair Details
+            <i class="bi bi-arrow-right"></i>
+
+        </button>
+
+    </div>
+
+
+    <!-- SUPPORT -->
+
+    <div class="support-card">
+
+        <div class="support-icon">
+
+            <i class="bi bi-headset"></i>
+
+        </div>
+
+        <div>
+
+            <strong>
+                Need help with a repair?
+            </strong>
+
+            <p>
+                Contact our support team for assistance with your repair request.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    function viewRepair(repairId) {
+
+        alert(
+            "Repair Details\n\nRepair ID: " + repairId
+        );
+
+    }
+
+</script>
+
+</body>
+
+</html>

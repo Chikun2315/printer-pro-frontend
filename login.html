@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Printer Pro - Login</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="login-page">
+
+    <div class="login-card">
+
+        <div class="login-logo">
+            🖨️
+        </div>
+
+        <h2>
+            PRINTER <span>PRO</span>
+        </h2>
+
+        <p class="login-subtitle">
+            Welcome back! Please login to continue.
+        </p>
+
+        <form onsubmit="loginUser(event)">
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Mobile No 
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    class="form-control"
+                    placeholder="Enter mobile no"
+                    required>
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    class="form-control"
+                    placeholder="Enter password"
+                    required>
+
+            </div>
+
+            <div
+                id="loginError"
+                class="alert alert-danger d-none">
+
+                Invalid User ID or Password
+
+            </div>
+<div style="
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #7a8496;
+">
+
+    Don't have an account?
+
+    <a href="registration.html"
+       style="
+           color: #0864cf;
+           font-weight: 700;
+           text-decoration: none;
+           margin-left: 4px;
+       ">
+        Create Account
+    </a>
+
+</div>
+            <button
+                type="submit"
+                class="btn login-btn w-100">
+
+                Login
+
+            </button>
+
+        </form>
+
+        <p class="login-footer">
+            Trusted • Reliable • Fast
+        </p>
+
+    </div>
+
+</div>
+
+<script src="/app.js"></script>
+
+</body>
+</html>

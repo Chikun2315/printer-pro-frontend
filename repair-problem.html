@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Printer Pro - Repair Problem</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f5f8fc;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #172033;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 520px;
+            min-height: 100vh;
+            margin: auto;
+            padding: 20px 16px 100px;
+            background: #f5f8fc;
+        }
+
+        /* HEADER */
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 25px;
+        }
+
+        .back-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1264d6;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,.07);
+        }
+
+        .back-btn i {
+            font-size: 20px;
+        }
+
+        .header h4 {
+            margin: 0 0 4px;
+            font-size: 21px;
+            font-weight: 700;
+        }
+
+        .header p {
+            margin: 0;
+            font-size: 13px;
+            color: #7b8495;
+        }
+
+        /* PROGRESS */
+
+        .progress-box {
+            background: white;
+            border-radius: 16px;
+            padding: 15px 10px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 18px rgba(25,75,130,.06);
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 55px;
+        }
+
+        .step-circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #e9eef5;
+            color: #8a94a6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .step.active .step-circle {
+            background: #1264d6;
+            color: white;
+        }
+
+        .step small {
+            margin-top: 5px;
+            font-size: 9px;
+            color: #8a94a6;
+        }
+
+        .step.active small {
+            color: #1264d6;
+            font-weight: 700;
+        }
+
+        .progress-line {
+            height: 2px;
+            flex: 1;
+            background: #dfe5ed;
+        }
+
+        /* TITLE */
+
+        .title-section {
+            margin-bottom: 18px;
+        }
+
+        .title-section h5 {
+            margin: 0 0 5px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .title-section p {
+            margin: 0;
+            color: #7d8798;
+            font-size: 13px;
+        }
+
+        /* PROBLEM OPTIONS */
+
+        .problem-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .problem-option {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 15px;
+            background: white;
+            border: 1px solid #e5eaf1;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .problem-option:hover {
+            border-color: #1264d6;
+            transform: translateY(-1px);
+        }
+
+        .problem-option input {
+            display: none;
+        }
+
+        .problem-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 21px;
+        }
+
+        .blue {
+            background: #eaf3ff;
+            color: #1264d6;
+        }
+
+        .orange {
+            background: #fff1e5;
+            color: #e67d20;
+        }
+
+        .purple {
+            background: #f1ebff;
+            color: #7047d8;
+        }
+
+        .green {
+            background: #e9f8ef;
+            color: #1b9b5d;
+        }
+
+        .red {
+            background: #fff0f0;
+            color: #dc4545;
+        }
+
+        .problem-text {
+            flex: 1;
+        }
+
+        .problem-text strong {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .problem-text span {
+            font-size: 11px;
+            color: #8791a2;
+        }
+
+        .radio {
+            width: 21px;
+            height: 21px;
+            border: 2px solid #cbd3df;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .problem-option input:checked + .problem-content .radio {
+            border-color: #1264d6;
+        }
+
+        .problem-option input:checked + .problem-content .radio::after {
+            content: "";
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #1264d6;
+        }
+
+        .problem-option:has(input:checked) {
+            border-color: #1264d6;
+            background: #f8fbff;
+        }
+
+        /* OTHER PROBLEM */
+
+        .other-box {
+            margin-top: 18px;
+            background: white;
+            padding: 16px;
+            border-radius: 16px;
+            border: 1px solid #e5eaf1;
+        }
+
+        .other-box label {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .other-box textarea {
+            width: 100%;
+            min-height: 85px;
+            border: 1px solid #dce2ea;
+            border-radius: 11px;
+            padding: 11px;
+            resize: none;
+            outline: none;
+            font-size: 13px;
+        }
+
+        .other-box textarea:focus {
+            border-color: #1264d6;
+        }
+
+        /* BUTTON */
+
+        .continue-btn {
+            width: 100%;
+            height: 52px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 12px;
+            background: #1264d6;
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .continue-btn:hover {
+            background: #0754bd;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <a href="select-printer.html" class="back-btn">
+            <i class="bi bi-arrow-left"></i>
+        </a>
+
+        <div>
+            <h4>Repair Problem</h4>
+            <p>Tell us what's wrong with your printer</p>
+        </div>
+
+    </div>
+
+
+    <!-- PROGRESS -->
+
+    <div class="progress-box">
+
+        <div class="step">
+            <div class="step-circle">
+                ✓
+            </div>
+            <small>Printer</small>
+        </div>
+
+        <div class="progress-line"></div>
+
+        <div class="step active">
+            <div class="step-circle">
+                2
+            </div>
+            <small>Problem</small>
+        </div>
+
+        <div class="progress-line"></div>
+
+        <div class="step">
+            <div class="step-circle">
+                3
+            </div>
+            <small>Schedule</small>
+        </div>
+
+        <div class="progress-line"></div>
+
+        <div class="step">
+            <div class="step-circle">
+                4
+            </div>
+            <small>Address</small>
+        </div>
+
+    </div>
+
+
+    <!-- TITLE -->
+
+    <div class="title-section">
+
+        <h5>Select the problem</h5>
+
+        <p>
+            Choose the issue you're experiencing
+        </p>
+
+    </div>
+
+
+    <!-- PROBLEMS -->
+
+    <div class="problem-list">
+
+        <label class="problem-option">
+
+            <input type="radio" name="problem">
+
+            <div class="problem-content d-flex align-items-center gap-3 w-100">
+
+                <div class="problem-icon blue">
+                    <i class="bi bi-file-earmark-x"></i>
+                </div>
+
+                <div class="problem-text">
+                    <strong>Printing Problem</strong>
+                    <span>Printer is not printing properly</span>
+                </div>
+
+                <div class="radio"></div>
+
+            </div>
+
+        </label>
+
+
+        <label class="problem-option">
+
+            <input type="radio" name="problem">
+
+            <div class="problem-content d-flex align-items-center gap-3 w-100">
+
+                <div class="problem-icon orange">
+                    <i class="bi bi-droplet"></i>
+                </div>
+
+                <div class="problem-text">
+                    <strong>Ink / Toner Problem</strong>
+                    <span>Low ink, toner or cartridge issue</span>
+                </div>
+
+                <div class="radio"></div>
+
+            </div>
+
+        </label>
+
+
+        <label class="problem-option">
+
+            <input type="radio" name="problem">
+
+            <div class="problem-content d-flex align-items-center gap-3 w-100">
+
+                <div class="problem-icon purple">
+                    <i class="bi bi-file-text"></i>
+                </div>
+
+                <div class="problem-text">
+                    <strong>Paper Jam</strong>
+                    <span>Paper is stuck inside the printer</span>
+                </div>
+
+                <div class="radio"></div>
+
+            </div>
+
+        </label>
+
+
+        <label class="problem-option">
+
+            <input type="radio" name="problem">
+
+            <div class="problem-content d-flex align-items-center gap-3 w-100">
+
+                <div class="problem-icon green">
+                    <i class="bi bi-wifi"></i>
+                </div>
+
+                <div class="problem-text">
+                    <strong>Connectivity Problem</strong>
+                    <span>Wi-Fi, USB or connection issue</span>
+                </div>
+
+                <div class="radio"></div>
+
+            </div>
+
+        </label>
+
+
+        <label class="problem-option">
+
+            <input type="radio" name="problem">
+
+            <div class="problem-content d-flex align-items-center gap-3 w-100">
+
+                <div class="problem-icon red">
+                    <i class="bi bi-exclamation-triangle"></i>
+                </div>
+
+                <div class="problem-text">
+                    <strong>Printer Not Turning On</strong>
+                    <span>Power or hardware related issue</span>
+                </div>
+
+                <div class="radio"></div>
+
+            </div>
+
+        </label>
+
+    </div>
+
+
+    <!-- OTHER -->
+
+    <div class="other-box">
+
+        <label>
+            Other Problem
+        </label>
+
+        <textarea
+            placeholder="Describe your printer problem (optional)">
+        </textarea>
+
+    </div>
+
+
+    <button
+        class="continue-btn"
+        onclick="goToSchedule()">
+
+        Continue
+        <i class="bi bi-arrow-right ms-1"></i>
+
+    </button>
+
+</div>
+
+
+<script>
+
+function goToSchedule() {
+
+    const selected =
+        document.querySelector(
+            'input[name="problem"]:checked'
+        );
+
+    if (!selected) {
+
+        alert("Please select a printer problem.");
+
+        return;
+    }
+
+    window.location.href =
+        "repair-schedule.html";
+}
+
+</script>
+
+</body>
+</html>
