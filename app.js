@@ -11,14 +11,12 @@ function loginUser(event) {
     // Temporary credentials
     if (username === "admin" && password === "admin") {
 
-        // Try to save login state
         try {
             sessionStorage.setItem("loggedInUser", username);
         } catch (error) {
             console.warn("Session storage unavailable:", error);
         }
 
-        // Redirect to home page
         window.location.href = "home.html";
 
     } else {
