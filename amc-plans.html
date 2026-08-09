@@ -5,8 +5,9 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <title>Printer Pro - AMC Plans</title>
 
@@ -24,24 +25,98 @@
 
 </head>
 
-<body>
 
-<div class="page-container">
+<body
+    style="
+        margin:0;
+        padding:0;
+        background:#f5f8fc;
+        font-family:Arial, Helvetica, sans-serif;
+        color:#071b3a;
+    "
+>
 
-    <div class="simple-header">
 
-        <a href="home.html" class="back-btn">
-            <i class="bi bi-arrow-left"></i>
-        </a>
+<!-- =====================================================
+     MAIN CONTAINER
+===================================================== -->
+
+<div
+    style="
+        width:100%;
+        max-width:504px;
+        margin:0 auto;
+        min-height:100vh;
+        padding:20px 20px 105px;
+        box-sizing:border-box;
+    "
+>
+
+
+    <!-- =================================================
+         HEADER
+    ================================================== -->
+
+    <div
+        style="
+            display:flex;
+            align-items:center;
+            gap:13px;
+            margin-bottom:22px;
+        "
+    >
+
+        <button
+            type="button"
+            onclick="goHome()"
+
+            style="
+                width:42px;
+                height:42px;
+                flex-shrink:0;
+                border:none;
+                border-radius:12px;
+                background:#ffffff;
+                color:#1267d9;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                cursor:pointer;
+                box-shadow:0 4px 14px rgba(20,45,90,0.08);
+                padding:0;
+            "
+        >
+
+            <i
+                class="bi bi-arrow-left"
+                style="font-size:19px;"
+            ></i>
+
+        </button>
+
 
         <div>
 
-            <h4>
+            <h4
+                style="
+                    margin:0 0 4px;
+                    font-size:20px;
+                    font-weight:700;
+                    color:#071b3a;
+                "
+            >
                 AMC Plans
             </h4>
 
-            <p>
-                Keep your printer running smoothly
+
+            <p
+                style="
+                    margin:0;
+                    font-size:12px;
+                    color:#7b8798;
+                "
+            >
+                Keep your printer protected all year
             </p>
 
         </div>
@@ -49,98 +124,1267 @@
     </div>
 
 
-    <div class="amc-card">
 
-        <span class="amc-label">
-            BASIC
-        </span>
+    <!-- =================================================
+         INTRO CARD
+    ================================================== -->
 
-        <h3>
-            ₹999
-        </h3>
+    <div
+        style="
+            background:linear-gradient(
+                135deg,
+                #071b3a,
+                #123f82
+            );
+            border-radius:18px;
+            padding:20px;
+            margin-bottom:20px;
+            color:#ffffff;
+            box-shadow:0 7px 20px rgba(7,27,58,0.15);
+        "
+    >
 
-        <p>
-            Per Year
-        </p>
+        <div
+            style="
+                display:flex;
+                align-items:center;
+                gap:13px;
+            "
+        >
+
+            <div
+                style="
+                    width:48px;
+                    height:48px;
+                    border-radius:14px;
+                    background:rgba(255,255,255,0.12);
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    flex-shrink:0;
+                "
+            >
+
+                <i
+                    class="bi bi-shield-check"
+                    style="font-size:25px;"
+                ></i>
+
+            </div>
 
 
-        <hr>
+            <div>
+
+                <h5
+                    style="
+                        margin:0 0 5px;
+                        font-size:15px;
+                        font-weight:700;
+                    "
+                >
+                    Printer Care Made Simple
+                </h5>
 
 
-        <div class="amc-benefit">
-            <i class="bi bi-check-circle"></i>
-            2 Preventive Services
+                <p
+                    style="
+                        margin:0;
+                        font-size:10px;
+                        line-height:1.6;
+                        color:rgba(255,255,255,0.78);
+                    "
+                >
+                    Get regular maintenance, priority support
+                    and reliable printer service.
+                </p>
+
+            </div>
+
         </div>
-
-        <div class="amc-benefit">
-            <i class="bi bi-check-circle"></i>
-            Service Support
-        </div>
-
-        <div class="amc-benefit">
-            <i class="bi bi-check-circle"></i>
-            Priority Booking
-        </div>
-
-
-        <a
-            href="amc-details.html"
-            class="btn btn-outline-primary w-100 mt-3">
-
-            View Plan
-
-        </a>
 
     </div>
 
 
-    <div class="amc-card featured">
 
-        <span class="amc-label">
-            PREMIUM
+    <!-- =================================================
+         SECTION TITLE
+    ================================================== -->
+
+    <div
+        style="
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:13px;
+        "
+    >
+
+        <h5
+            style="
+                margin:0;
+                font-size:16px;
+                font-weight:700;
+                color:#071b3a;
+            "
+        >
+            Choose Your Plan
+        </h5>
+
+
+        <span
+            style="
+                font-size:10px;
+                color:#8793a5;
+            "
+        >
+            3 Plans
         </span>
 
-        <h3>
-            ₹1,999
-        </h3>
-
-        <p>
-            Per Year
-        </p>
+    </div>
 
 
-        <hr>
+
+    <!-- =================================================
+         BASIC PLAN
+    ================================================== -->
+
+    <div
+        style="
+            background:#ffffff;
+            border-radius:17px;
+            padding:17px;
+            margin-bottom:13px;
+            box-shadow:0 5px 18px rgba(20,45,90,0.06);
+            border:1px solid #edf1f6;
+        "
+    >
+
+        <div
+            style="
+                display:flex;
+                align-items:flex-start;
+                justify-content:space-between;
+                gap:10px;
+            "
+        >
+
+            <div
+                style="
+                    display:flex;
+                    align-items:center;
+                    gap:11px;
+                "
+            >
+
+                <div
+                    style="
+                        width:45px;
+                        height:45px;
+                        border-radius:12px;
+                        background:#edf5ff;
+                        color:#1267d9;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        flex-shrink:0;
+                    "
+                >
+
+                    <i
+                        class="bi bi-shield"
+                        style="font-size:22px;"
+                    ></i>
+
+                </div>
 
 
-        <div class="amc-benefit">
-            <i class="bi bi-check-circle"></i>
-            4 Preventive Services
+                <div>
+
+                    <h6
+                        style="
+                            margin:0 0 4px;
+                            font-size:14px;
+                            font-weight:700;
+                        "
+                    >
+                        Basic AMC
+                    </h6>
+
+
+                    <span
+                        style="
+                            font-size:10px;
+                            color:#8793a5;
+                        "
+                    >
+                        Essential printer care
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div
+                style="
+                    text-align:right;
+                    flex-shrink:0;
+                "
+            >
+
+                <strong
+                    style="
+                        display:block;
+                        font-size:18px;
+                        color:#1267d9;
+                    "
+                >
+                    ₹1,499
+                </strong>
+
+
+                <span
+                    style="
+                        font-size:9px;
+                        color:#8793a5;
+                    "
+                >
+                    / year
+                </span>
+
+            </div>
+
         </div>
 
-        <div class="amc-benefit">
-            <i class="bi bi-check-circle"></i>
-            Free Service Visits
+
+
+        <!-- FEATURES -->
+
+        <div
+            style="
+                margin-top:15px;
+                padding-top:13px;
+                border-top:1px solid #edf0f4;
+            "
+        >
+
+            <div
+                style="
+                    display:flex;
+                    align-items:center;
+                    gap:7px;
+                    margin-bottom:8px;
+                "
+            >
+
+                <i
+                    class="bi bi-check-circle-fill"
+                    style="
+                        color:#159447;
+                        font-size:12px;
+                    "
+                ></i>
+
+                <span
+                    style="
+                        font-size:10px;
+                        color:#59677b;
+                    "
+                >
+                    2 preventive maintenance visits
+                </span>
+
+            </div>
+
+
+            <div
+                style="
+                    display:flex;
+                    align-items:center;
+                    gap:7px;
+                    margin-bottom:8px;
+                "
+            >
+
+                <i
+                    class="bi bi-check-circle-fill"
+                    style="
+                        color:#159447;
+                        font-size:12px;
+                    "
+                ></i>
+
+                <span
+                    style="
+                        font-size:10px;
+                        color:#59677b;
+                    "
+                >
+                    Basic printer cleaning
+                </span>
+
+            </div>
+
+
+            <div
+                style="
+                    display:flex;
+                    align-items:center;
+                    gap:7px;
+                "
+            >
+
+                <i
+                    class="bi bi-check-circle-fill"
+                    style="
+                        color:#159447;
+                        font-size:12px;
+                    "
+                ></i>
+
+                <span
+                    style="
+                        font-size:10px;
+                        color:#59677b;
+                    "
+                >
+                    Service support
+                </span>
+
+            </div>
+
         </div>
 
-        <div class="amc-benefit">
-            <i class="bi bi-check-circle"></i>
-            Priority Support
+
+
+        <!-- BUTTONS -->
+
+        <div
+            style="
+                display:flex;
+                gap:8px;
+                margin-top:15px;
+            "
+        >
+
+            <button
+                onclick="viewPlan('basic')"
+
+                style="
+                    flex:1;
+                    height:36px;
+                    border:1px solid #1267d9;
+                    border-radius:9px;
+                    background:#ffffff;
+                    color:#1267d9;
+                    font-size:10px;
+                    font-weight:700;
+                    cursor:pointer;
+                "
+            >
+
+                <i class="bi bi-eye"></i>
+
+                View Details
+
+            </button>
+
+
+            <button
+                onclick="choosePlan('basic')"
+
+                style="
+                    flex:1;
+                    height:36px;
+                    border:none;
+                    border-radius:9px;
+                    background:#1267d9;
+                    color:#ffffff;
+                    font-size:10px;
+                    font-weight:700;
+                    cursor:pointer;
+                "
+            >
+
+                Choose Plan
+
+                <i class="bi bi-arrow-right"></i>
+
+            </button>
+
         </div>
-
-
-        <a
-            href="amc-details.html"
-            class="btn btn-primary w-100 mt-3">
-
-            View Plan
-
-        </a>
 
     </div>
+
+
+
+    <!-- =================================================
+         STANDARD PLAN
+    ================================================== -->
+
+    <div
+        style="
+            background:#ffffff;
+            border-radius:17px;
+            padding:17px;
+            margin-bottom:13px;
+            box-shadow:0 7px 20px rgba(18,103,217,0.10);
+            border:2px solid #1267d9;
+            position:relative;
+        "
+    >
+
+        <!-- POPULAR -->
+
+        <div
+            style="
+                position:absolute;
+                top:-10px;
+                right:15px;
+                background:#1267d9;
+                color:#ffffff;
+                padding:5px 10px;
+                border-radius:20px;
+                font-size:8px;
+                font-weight:700;
+            "
+        >
+            MOST POPULAR
+        </div>
+
+
+        <div
+            style="
+                display:flex;
+                align-items:flex-start;
+                justify-content:space-between;
+                gap:10px;
+            "
+        >
+
+            <div
+                style="
+                    display:flex;
+                    align-items:center;
+                    gap:11px;
+                "
+            >
+
+                <div
+                    style="
+                        width:45px;
+                        height:45px;
+                        border-radius:12px;
+                        background:#1267d9;
+                        color:#ffffff;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        flex-shrink:0;
+                    "
+                >
+
+                    <i
+                        class="bi bi-shield-check"
+                        style="font-size:22px;"
+                    ></i>
+
+                </div>
+
+
+                <div>
+
+                    <h6
+                        style="
+                            margin:0 0 4px;
+                            font-size:14px;
+                            font-weight:700;
+                        "
+                    >
+                        Standard AMC
+                    </h6>
+
+
+                    <span
+                        style="
+                            font-size:10px;
+                            color:#8793a5;
+                        "
+                    >
+                        Complete printer protection
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div
+                style="
+                    text-align:right;
+                    flex-shrink:0;
+                "
+            >
+
+                <strong
+                    style="
+                        display:block;
+                        font-size:18px;
+                        color:#1267d9;
+                    "
+                >
+                    ₹2,499
+                </strong>
+
+
+                <span
+                    style="
+                        font-size:9px;
+                        color:#8793a5;
+                    "
+                >
+                    / year
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FEATURES -->
+
+        <div
+            style="
+                margin-top:15px;
+                padding-top:13px;
+                border-top:1px solid #edf0f4;
+            "
+        >
+
+            <div
+                style="
+                    display:flex;
+                    align-items:center;
+                    gap:7px;
+                    margin-bottom:8px;
+                "
+            >
+
+                <i
+                    class="bi bi-check-circle-fill"
+                    style="
+                        color:#159447;
+                        font-size:12px;
+                    "
+                ></i>
+
+                <span
+                    style="
+                        font-size:10px;
+                        color:#59677b;
+                    "
+                >
+                    4 preventive maintenance visits
+                </span>
+
+            </div>
+
+
+            <div
+                style="
+                    display:flex;
+                    align-items:center;
+                    gap:7px;
+                    margin-bottom:8px;
+                "
+            >
+
+                <i
+                    class="bi bi-check-circle-fill"
+                    style="
+                        color:#159447;
+                        font-size:12px;
+                    "
+                ></i>
+
+                <span
+                    style="
+                        font-size:10px;
+                        color:#59677b;
+                    "
+                >
+                    Priority service support
+                </span>
+
+            </div>
+
+
+            <div
+                style="
+                    display:flex;
+                    align-items:center;
+                    gap:7px;
+                    margin-bottom:8px;
+                "
+            >
+
+                <i
+                    class="bi bi-check-circle-fill"
+                    style="
+                        color:#159447;
+                        font-size:12px;
+                    "
+                ></i>
+
+                <span
+                    style="
+                        font-size:10px;
+                        color:#59677b;
+                    "
+                >
+                    Printer cleaning and inspection
+                </span>
+
+            </div>
+
+
+            <div
+                style="
+                    display:flex;
+                    align-items:center;
+                    gap:7px;
+                "
+            >
+
+                <i
+                    class="bi bi-check-circle-fill"
+                    style="
+                        color:#159447;
+                        font-size:12px;
+                    "
+                ></i>
+
+                <span
+                    style="
+                        font-size:10px;
+                        color:#59677b;
+                    "
+                >
+                    Labour charges included
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- BUTTONS -->
+
+        <div
+            style="
+                display:flex;
+                gap:8px;
+                margin-top:15px;
+            "
+        >
+
+            <button
+                onclick="viewPlan('standard')"
+
+                style="
+                    flex:1;
+                    height:36px;
+                    border:1px solid #1267d9;
+                    border-radius:9px;
+                    background:#ffffff;
+                    color:#1267d9;
+                    font-size:10px;
+                    font-weight:700;
+                    cursor:pointer;
+                "
+            >
+
+                <i class="bi bi-eye"></i>
+
+                View Details
+
+            </button>
+
+
+            <button
+                onclick="choosePlan('standard')"
+
+                style="
+                    flex:1;
+                    height:36px;
+                    border:none;
+                    border-radius:9px;
+                    background:#1267d9;
+                    color:#ffffff;
+                    font-size:10px;
+                    font-weight:700;
+                    cursor:pointer;
+                "
+            >
+
+                Choose Plan
+
+                <i class="bi bi-arrow-right"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         PREMIUM PLAN
+    ================================================== -->
+
+    <div
+        style="
+            background:#ffffff;
+            border-radius:17px;
+            padding:17px;
+            margin-bottom:13px;
+            box-shadow:0 5px 18px rgba(20,45,90,0.06);
+            border:1px solid #edf1f6;
+        "
+    >
+
+        <div
+            style="
+                display:flex;
+                align-items:flex-start;
+                justify-content:space-between;
+                gap:10px;
+            "
+        >
+
+            <div
+                style="
+                    display:flex;
+                    align-items:center;
+                    gap:11px;
+                "
+            >
+
+                <div
+                    style="
+                        width:45px;
+                        height:45px;
+                        border-radius:12px;
+                        background:#071b3a;
+                        color:#ffffff;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        flex-shrink:0;
+                    "
+                >
+
+                    <i
+                        class="bi bi-stars"
+                        style="font-size:22px;"
+                    ></i>
+
+                </div>
+
+
+                <div>
+
+                    <h6
+                        style="
+                            margin:0 0 4px;
+                            font-size:14px;
+                            font-weight:700;
+                        "
+                    >
+                        Premium AMC
+                    </h6>
+
+
+                    <span
+                        style="
+                            font-size:10px;
+                            color:#8793a5;
+                        "
+                    >
+                        Maximum protection
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div
+                style="
+                    text-align:right;
+                    flex-shrink:0;
+                "
+            >
+
+                <strong
+                    style="
+                        display:block;
+                        font-size:18px;
+                        color:#1267d9;
+                    "
+                >
+                    ₹3,999
+                </strong>
+
+
+                <span
+                    style="
+                        font-size:9px;
+                        color:#8793a5;
+                    "
+                >
+                    / year
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FEATURES -->
+
+        <div
+            style="
+                margin-top:15px;
+                padding-top:13px;
+                border-top:1px solid #edf0f4;
+            "
+        >
+
+            <div
+                style="
+                    display:flex;
+                    align-items:center;
+                    gap:7px;
+                    margin-bottom:8px;
+                "
+            >
+
+                <i
+                    class="bi bi-check-circle-fill"
+                    style="
+                        color:#159447;
+                        font-size:12px;
+                    "
+                ></i>
+
+                <span
+                    style="
+                        font-size:10px;
+                        color:#59677b;
+                    "
+                >
+                    Unlimited service requests
+                </span>
+
+            </div>
+
+
+            <div
+                style="
+                    display:flex;
+                    align-items:center;
+                    gap:7px;
+                    margin-bottom:8px;
+                "
+            >
+
+                <i
+                    class="bi bi-check-circle-fill"
+                    style="
+                        color:#159447;
+                        font-size:12px;
+                    "
+                ></i>
+
+                <span
+                    style="
+                        font-size:10px;
+                        color:#59677b;
+                    "
+                >
+                    Priority technician support
+                </span>
+
+            </div>
+
+
+            <div
+                style="
+                    display:flex;
+                    align-items:center;
+                    gap:7px;
+                    margin-bottom:8px;
+                "
+            >
+
+                <i
+                    class="bi bi-check-circle-fill"
+                    style="
+                        color:#159447;
+                        font-size:12px;
+                    "
+                ></i>
+
+                <span
+                    style="
+                        font-size:10px;
+                        color:#59677b;
+                    "
+                >
+                    Preventive maintenance
+                </span>
+
+            </div>
+
+
+            <div
+                style="
+                    display:flex;
+                    align-items:center;
+                    gap:7px;
+                "
+            >
+
+                <i
+                    class="bi bi-check-circle-fill"
+                    style="
+                        color:#159447;
+                        font-size:12px;
+                    "
+                ></i>
+
+                <span
+                    style="
+                        font-size:10px;
+                        color:#59677b;
+                    "
+                >
+                    Labour and service charges included
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- BUTTONS -->
+
+        <div
+            style="
+                display:flex;
+                gap:8px;
+                margin-top:15px;
+            "
+        >
+
+            <button
+                onclick="viewPlan('premium')"
+
+                style="
+                    flex:1;
+                    height:36px;
+                    border:1px solid #1267d9;
+                    border-radius:9px;
+                    background:#ffffff;
+                    color:#1267d9;
+                    font-size:10px;
+                    font-weight:700;
+                    cursor:pointer;
+                "
+            >
+
+                <i class="bi bi-eye"></i>
+
+                View Details
+
+            </button>
+
+
+            <button
+                onclick="choosePlan('premium')"
+
+                style="
+                    flex:1;
+                    height:36px;
+                    border:none;
+                    border-radius:9px;
+                    background:#1267d9;
+                    color:#ffffff;
+                    font-size:10px;
+                    font-weight:700;
+                    cursor:pointer;
+                "
+            >
+
+                Choose Plan
+
+                <i class="bi bi-arrow-right"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         INFO
+    ================================================== -->
+
+    <div
+        style="
+            display:flex;
+            align-items:flex-start;
+            gap:9px;
+            background:#eef6ff;
+            border-radius:13px;
+            padding:13px;
+            margin-top:16px;
+        "
+    >
+
+        <i
+            class="bi bi-info-circle"
+            style="
+                color:#1267d9;
+                font-size:14px;
+                margin-top:1px;
+            "
+        ></i>
+
+
+        <p
+            style="
+                margin:0;
+                font-size:9px;
+                line-height:1.6;
+                color:#5c6b80;
+            "
+        >
+            AMC plans are designed to keep your printer
+            maintained and reduce unexpected service issues.
+            Plan availability and coverage can be configured
+            according to your printer model.
+        </p>
+
+    </div>
+
 
 </div>
 
-<script src="app.js"></script>
+
+
+<!-- =====================================================
+     BOTTOM NAVIGATION
+===================================================== -->
+
+<div class="bottom-nav">
+
+    <a href="home.html">
+
+        <i class="bi bi-house"></i>
+
+        <span>
+            Home
+        </span>
+
+    </a>
+
+
+    <a href="current-orders.html">
+
+        <i class="bi bi-truck"></i>
+
+        <span>
+            Current Orders
+        </span>
+
+    </a>
+
+
+    <a href="history.html">
+
+        <i class="bi bi-clock-history"></i>
+
+        <span>
+            History
+        </span>
+
+    </a>
+
+
+    <a href="profile.html">
+
+        <i class="bi bi-person"></i>
+
+        <span>
+            Profile
+        </span>
+
+    </a>
+
+</div>
+
+
+
+<script>
+
+/* =====================================================
+   AMC PLAN DATA
+===================================================== */
+
+const amcPlans = {
+
+    basic: {
+
+        name: "Basic AMC",
+
+        price: 1499,
+
+        duration: "1 Year",
+
+        visits: "2 preventive maintenance visits",
+
+        description:
+            "Essential annual maintenance coverage for customers who need basic printer care and service support."
+
+    },
+
+
+    standard: {
+
+        name: "Standard AMC",
+
+        price: 2499,
+
+        duration: "1 Year",
+
+        visits: "4 preventive maintenance visits",
+
+        description:
+            "Complete annual printer protection with priority service support, cleaning and inspection."
+
+    },
+
+
+    premium: {
+
+        name: "Premium AMC",
+
+        price: 3999,
+
+        duration: "1 Year",
+
+        visits: "Unlimited service requests",
+
+        description:
+            "Maximum printer protection with priority technician support, preventive maintenance and included service charges."
+
+    }
+
+};
+
+
+
+/* =====================================================
+   BACK TO HOME
+===================================================== */
+
+function goHome() {
+
+    window.location.href =
+        "home.html";
+
+}
+
+
+
+/* =====================================================
+   VIEW PLAN
+===================================================== */
+
+function viewPlan(planId) {
+
+    const plan =
+        amcPlans[planId];
+
+
+    if(!plan) {
+
+        return;
+
+    }
+
+
+    localStorage.setItem(
+        "selectedAMCPlan",
+        JSON.stringify(plan)
+    );
+
+
+    /*
+       This page can be created next.
+    */
+
+    window.location.href =
+        "amc-plan-details.html";
+
+}
+
+
+
+/* =====================================================
+   CHOOSE PLAN
+===================================================== */
+
+function choosePlan(planId) {
+
+    const plan =
+        amcPlans[planId];
+
+
+    if(!plan) {
+
+        return;
+
+    }
+
+
+    localStorage.setItem(
+        "selectedAMCPlan",
+        JSON.stringify(plan)
+    );
+
+
+    /*
+       Move directly to AMC checkout.
+    */
+
+    window.location.href =
+        "amc-checkout.html";
+
+}
+
+</script>
+
 
 </body>
+
 </html>
