@@ -5,8 +5,9 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <title>Printer Pro - Checkout</title>
 
@@ -24,22 +25,98 @@
 
 </head>
 
-<body>
 
-<div class="page-container">
+<body
+    style="
+        margin:0;
+        padding:0;
+        background:#f5f8fc;
+        font-family:Arial, Helvetica, sans-serif;
+        color:#071b3a;
+    "
+>
 
-    <div class="simple-header">
 
-        <a href="cart.html" class="back-btn">
-            <i class="bi bi-arrow-left"></i>
-        </a>
+<!-- =====================================================
+     MAIN CONTAINER
+===================================================== -->
+
+<div
+    style="
+        width:100%;
+        max-width:504px;
+        margin:0 auto;
+        min-height:100vh;
+        padding:20px 20px 110px;
+        box-sizing:border-box;
+    "
+>
+
+
+    <!-- =================================================
+         HEADER
+    ================================================== -->
+
+    <div
+        style="
+            display:flex;
+            align-items:center;
+            gap:13px;
+            margin-bottom:22px;
+        "
+    >
+
+        <button
+            type="button"
+            onclick="goBack()"
+
+            style="
+                width:42px;
+                height:42px;
+                flex-shrink:0;
+                border:none;
+                border-radius:12px;
+                background:#ffffff;
+                color:#1267d9;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                cursor:pointer;
+                box-shadow:0 4px 14px rgba(20,45,90,0.08);
+                padding:0;
+            "
+        >
+
+            <i
+                class="bi bi-arrow-left"
+                style="font-size:19px;"
+            ></i>
+
+        </button>
+
 
         <div>
 
-            <h4>Checkout</h4>
+            <h4
+                style="
+                    margin:0 0 4px;
+                    font-size:20px;
+                    font-weight:700;
+                    color:#071b3a;
+                "
+            >
+                Checkout
+            </h4>
 
-            <p>
-                Confirm your order
+
+            <p
+                style="
+                    margin:0;
+                    font-size:12px;
+                    color:#7b8798;
+                "
+            >
+                Review your order and continue
             </p>
 
         </div>
@@ -47,35 +124,151 @@
     </div>
 
 
-    <div class="checkout-section">
 
-        <div class="checkout-section-header">
+    <!-- =================================================
+         PROGRESS
+    ================================================== -->
 
-            <h6>
-                Delivery Address
-            </h6>
+    <div
+        style="
+            background:#ffffff;
+            border-radius:16px;
+            padding:15px;
+            margin-bottom:14px;
+            box-shadow:0 5px 18px rgba(20,45,90,0.05);
+        "
+    >
 
-            <a href="addresses.html">
-                Change
-            </a>
+        <div
+            style="
+                display:flex;
+                align-items:center;
+                justify-content:space-between;
+            "
+        >
 
-        </div>
+            <div style="text-align:center;">
+
+                <div
+                    style="
+                        width:28px;
+                        height:28px;
+                        margin:auto;
+                        border-radius:50%;
+                        background:#1267d9;
+                        color:#ffffff;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        font-size:11px;
+                        font-weight:700;
+                    "
+                >
+                    1
+                </div>
+
+                <small
+                    style="
+                        display:block;
+                        margin-top:5px;
+                        font-size:9px;
+                        color:#1267d9;
+                        font-weight:700;
+                    "
+                >
+                    Cart
+                </small>
+
+            </div>
 
 
-        <div class="checkout-address">
+            <div
+                style="
+                    flex:1;
+                    height:2px;
+                    background:#1267d9;
+                    margin:0 8px;
+                    margin-bottom:17px;
+                "
+            ></div>
 
-            <i class="bi bi-house-fill"></i>
 
-            <div>
+            <div style="text-align:center;">
 
-                <strong>
-                    Home
-                </strong>
+                <div
+                    style="
+                        width:28px;
+                        height:28px;
+                        margin:auto;
+                        border-radius:50%;
+                        background:#1267d9;
+                        color:#ffffff;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        font-size:11px;
+                        font-weight:700;
+                    "
+                >
+                    2
+                </div>
 
-                <p>
-                    123 Example Street,
-                    Bhubaneswar, Odisha
-                </p>
+                <small
+                    style="
+                        display:block;
+                        margin-top:5px;
+                        font-size:9px;
+                        color:#1267d9;
+                        font-weight:700;
+                    "
+                >
+                    Checkout
+                </small>
+
+            </div>
+
+
+            <div
+                style="
+                    flex:1;
+                    height:2px;
+                    background:#e1e6ee;
+                    margin:0 8px;
+                    margin-bottom:17px;
+                "
+            ></div>
+
+
+            <div style="text-align:center;">
+
+                <div
+                    style="
+                        width:28px;
+                        height:28px;
+                        margin:auto;
+                        border-radius:50%;
+                        background:#e8edf4;
+                        color:#8a96a8;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        font-size:11px;
+                        font-weight:700;
+                    "
+                >
+                    3
+                </div>
+
+                <small
+                    style="
+                        display:block;
+                        margin-top:5px;
+                        font-size:9px;
+                        color:#8a96a8;
+                    "
+                >
+                    Payment
+                </small>
 
             </div>
 
@@ -84,46 +277,304 @@
     </div>
 
 
-    <div class="checkout-section">
 
-        <h6>
-            Order Summary
-        </h6>
+    <!-- =================================================
+         DELIVERY ADDRESS
+    ================================================== -->
 
-        <div class="checkout-row">
+    <div
+        style="
+            background:#ffffff;
+            border-radius:16px;
+            padding:17px;
+            margin-bottom:14px;
+            box-shadow:0 5px 18px rgba(20,45,90,0.05);
+        "
+    >
 
-            <span>
-                HP 12A Toner
-            </span>
+        <div
+            style="
+                display:flex;
+                align-items:center;
+                justify-content:space-between;
+                margin-bottom:13px;
+            "
+        >
 
-            <strong>
-                ₹1,250
-            </strong>
+            <h5
+                style="
+                    margin:0;
+                    font-size:15px;
+                    font-weight:700;
+                "
+            >
+                Delivery Address
+            </h5>
+
+
+            <button
+                onclick="changeAddress()"
+
+                style="
+                    border:none;
+                    background:transparent;
+                    color:#1267d9;
+                    font-size:10px;
+                    font-weight:700;
+                    cursor:pointer;
+                "
+            >
+                Change
+            </button>
 
         </div>
 
-        <div class="checkout-row">
 
-            <span>
+        <div
+            id="addressBox"
+
+            style="
+                display:flex;
+                gap:11px;
+                padding:12px;
+                border:1px solid #e1e7ef;
+                border-radius:12px;
+                background:#fafcff;
+            "
+        >
+
+            <div
+                style="
+                    width:35px;
+                    height:35px;
+                    flex-shrink:0;
+                    border-radius:9px;
+                    background:#edf5ff;
+                    color:#1267d9;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                "
+            >
+
+                <i class="bi bi-geo-alt-fill"></i>
+
+            </div>
+
+
+            <div>
+
+                <strong
+                    id="addressName"
+                    style="
+                        display:block;
+                        font-size:12px;
+                        margin-bottom:3px;
+                    "
+                >
+                    Home
+                </strong>
+
+
+                <span
+                    id="addressText"
+
+                    style="
+                        display:block;
+                        font-size:10px;
+                        line-height:1.5;
+                        color:#78859a;
+                    "
+                >
+                    Select your delivery address
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         ORDER ITEMS
+    ================================================== -->
+
+    <div
+        style="
+            background:#ffffff;
+            border-radius:16px;
+            padding:17px;
+            margin-bottom:14px;
+            box-shadow:0 5px 18px rgba(20,45,90,0.05);
+        "
+    >
+
+        <div
+            style="
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+                margin-bottom:12px;
+            "
+        >
+
+            <h5
+                style="
+                    margin:0;
+                    font-size:15px;
+                    font-weight:700;
+                "
+            >
+                Your Order
+            </h5>
+
+
+            <span
+                id="itemCount"
+                style="
+                    font-size:10px;
+                    color:#8793a5;
+                "
+            >
+                0 items
+            </span>
+
+        </div>
+
+
+        <div
+            id="orderItems"
+        >
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         PRICE SUMMARY
+    ================================================== -->
+
+    <div
+        style="
+            background:#ffffff;
+            border-radius:16px;
+            padding:17px;
+            margin-bottom:14px;
+            box-shadow:0 5px 18px rgba(20,45,90,0.05);
+        "
+    >
+
+        <h5
+            style="
+                margin:0 0 13px;
+                font-size:15px;
+                font-weight:700;
+            "
+        >
+            Price Summary
+        </h5>
+
+
+        <div
+            style="
+                display:flex;
+                justify-content:space-between;
+                padding:7px 0;
+            "
+        >
+
+            <span
+                style="
+                    font-size:11px;
+                    color:#7b8798;
+                "
+            >
+                Item Total
+            </span>
+
+
+            <span
+                id="itemTotal"
+                style="
+                    font-size:11px;
+                    color:#172033;
+                "
+            >
+                ₹0
+            </span>
+
+        </div>
+
+
+        <div
+            style="
+                display:flex;
+                justify-content:space-between;
+                padding:7px 0;
+            "
+        >
+
+            <span
+                style="
+                    font-size:11px;
+                    color:#7b8798;
+                "
+            >
                 Delivery
             </span>
 
-            <strong>
-                ₹50
-            </strong>
+
+            <span
+                id="deliveryCharge"
+                style="
+                    font-size:11px;
+                    color:#159447;
+                "
+            >
+                FREE
+            </span>
 
         </div>
 
-        <hr>
 
-        <div class="checkout-total">
+        <div
+            style="
+                height:1px;
+                background:#edf0f4;
+                margin:7px 0;
+            "
+        ></div>
 
-            <span>
-                Total
-            </span>
 
-            <strong>
-                ₹1,300
+        <div
+            style="
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+                padding-top:5px;
+            "
+        >
+
+            <strong
+                style="
+                    font-size:13px;
+                "
+            >
+                Total Amount
+            </strong>
+
+
+            <strong
+                id="grandTotal"
+                style="
+                    font-size:20px;
+                    color:#1267d9;
+                "
+            >
+                ₹0
             </strong>
 
         </div>
@@ -131,17 +582,508 @@
     </div>
 
 
-    <a
-        href="payment.html"
-        class="btn btn-primary w-100">
 
-        Continue to Payment
+    <!-- =================================================
+         CONTINUE TO PAYMENT
+    ================================================== -->
+
+    <button
+        type="button"
+        onclick="proceedToPayment()"
+
+        style="
+            width:100%;
+            height:50px;
+            border:none;
+            border-radius:12px;
+            background:linear-gradient(
+                135deg,
+                #1267d9,
+                #0750b5
+            );
+            color:#ffffff;
+            font-size:13px;
+            font-weight:700;
+            cursor:pointer;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:7px;
+            box-shadow:0 6px 16px rgba(18,103,217,0.22);
+        "
+    >
+
+        Proceed to Payment
+
+        <i class="bi bi-arrow-right"></i>
+
+    </button>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     BOTTOM NAVIGATION
+===================================================== -->
+
+<div class="bottom-nav">
+
+    <a href="home.html">
+
+        <i class="bi bi-house"></i>
+
+        <span>
+            Home
+        </span>
+
+    </a>
+
+
+    <a href="current-orders.html">
+
+        <i class="bi bi-truck"></i>
+
+        <span>
+            Current Orders
+        </span>
+
+    </a>
+
+
+    <a href="history.html">
+
+        <i class="bi bi-clock-history"></i>
+
+        <span>
+            History
+        </span>
+
+    </a>
+
+
+    <a href="profile.html">
+
+        <i class="bi bi-person"></i>
+
+        <span>
+            Profile
+        </span>
 
     </a>
 
 </div>
 
-<script src="app.js"></script>
+
+
+<script>
+
+/* =====================================================
+   CART
+===================================================== */
+
+let cart =
+    JSON.parse(
+        localStorage.getItem(
+            "printerProCart"
+        )
+    ) || [];
+
+
+/* =====================================================
+   LOAD ADDRESS
+===================================================== */
+
+function loadAddress() {
+
+    const savedAddress =
+        localStorage.getItem(
+            "selectedAddress"
+        );
+
+
+    if(savedAddress) {
+
+        try {
+
+            const address =
+                JSON.parse(
+                    savedAddress
+                );
+
+
+            document.getElementById(
+                "addressName"
+            ).innerText =
+                address.name ||
+                "Selected Address";
+
+
+            document.getElementById(
+                "addressText"
+            ).innerText =
+                address.address ||
+                address.fullAddress ||
+                address.text ||
+                "Delivery address selected.";
+
+        }
+        catch(error) {
+
+            document.getElementById(
+                "addressText"
+            ).innerText =
+                savedAddress;
+
+        }
+
+    }
+
+}
+
+
+/* =====================================================
+   DISPLAY CART
+===================================================== */
+
+function displayCart() {
+
+    const container =
+        document.getElementById(
+            "orderItems"
+        );
+
+
+    container.innerHTML = "";
+
+
+    if(
+        !cart ||
+        cart.length === 0
+    ) {
+
+        container.innerHTML = `
+
+            <div
+                style="
+                    text-align:center;
+                    padding:30px 10px;
+                    color:#8793a5;
+                "
+            >
+
+                <i
+                    class="bi bi-cart-x"
+                    style="
+                        display:block;
+                        font-size:32px;
+                        margin-bottom:8px;
+                    "
+                ></i>
+
+                <span
+                    style="
+                        font-size:12px;
+                    "
+                >
+                    Your cart is empty.
+                </span>
+
+            </div>
+
+        `;
+
+
+        document.getElementById(
+            "itemCount"
+        ).innerText =
+            "0 items";
+
+
+        document.getElementById(
+            "itemTotal"
+        ).innerText =
+            "₹0";
+
+
+        document.getElementById(
+            "grandTotal"
+        ).innerText =
+            "₹0";
+
+
+        return;
+
+    }
+
+
+    let subtotal = 0;
+
+    let count = 0;
+
+
+    cart.forEach(
+        (item,index) => {
+
+
+            const quantity =
+                Number(
+                    item.quantity
+                ) || 1;
+
+
+            const price =
+                Number(
+                    item.price
+                ) || 0;
+
+
+            subtotal +=
+                price *
+                quantity;
+
+
+            count +=
+                quantity;
+
+
+            const row =
+                document.createElement(
+                    "div"
+                );
+
+
+            row.style.cssText = `
+
+                display:flex;
+                align-items:center;
+                gap:10px;
+                padding:11px 0;
+
+                ${
+                    index !==
+                    cart.length - 1
+                    ?
+                    "border-bottom:1px solid #edf0f4;"
+                    :
+                    ""
+                }
+
+            `;
+
+
+            row.innerHTML = `
+
+                <div
+                    style="
+                        width:43px;
+                        height:43px;
+                        flex-shrink:0;
+                        border-radius:11px;
+                        background:#edf5ff;
+                        color:#1267d9;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                    "
+                >
+
+                    <i
+                        class="bi bi-box-seam"
+                        style="font-size:20px;"
+                    ></i>
+
+                </div>
+
+
+                <div
+                    style="
+                        flex:1;
+                        min-width:0;
+                    "
+                >
+
+                    <strong
+                        style="
+                            display:block;
+                            font-size:11px;
+                            color:#172033;
+                            margin-bottom:3px;
+                        "
+                    >
+                        ${item.name}
+                    </strong>
+
+
+                    <span
+                        style="
+                            font-size:10px;
+                            color:#8793a5;
+                        "
+                    >
+                        Qty: ${quantity}
+                    </span>
+
+                </div>
+
+
+                <strong
+                    style="
+                        font-size:12px;
+                        color:#1267d9;
+                        white-space:nowrap;
+                    "
+                >
+                    ₹${(
+                        price *
+                        quantity
+                    ).toLocaleString("en-IN")}
+                </strong>
+
+            `;
+
+
+            container.appendChild(row);
+
+        }
+    );
+
+
+    document.getElementById(
+        "itemCount"
+    ).innerText =
+        count +
+        (
+            count === 1
+                ? " item"
+                : " items"
+        );
+
+
+    document.getElementById(
+        "itemTotal"
+    ).innerText =
+        "₹" +
+        subtotal.toLocaleString(
+            "en-IN"
+        );
+
+
+    document.getElementById(
+        "grandTotal"
+    ).innerText =
+        "₹" +
+        subtotal.toLocaleString(
+            "en-IN"
+        );
+
+}
+
+
+/* =====================================================
+   CHANGE ADDRESS
+===================================================== */
+
+function changeAddress() {
+
+    window.location.href =
+        "select-address.html";
+
+}
+
+
+/* =====================================================
+   PROCEED TO PAYMENT
+===================================================== */
+
+function proceedToPayment() {
+
+    if(
+        !cart ||
+        cart.length === 0
+    ) {
+
+        alert(
+            "Your cart is empty."
+        );
+
+        return;
+
+    }
+
+
+    /*
+       Save checkout information
+       for the payment page.
+    */
+
+    const checkoutData = {
+
+        cart:cart,
+
+        total:cart.reduce(
+            (
+                total,
+                item
+            ) =>
+                total +
+                (
+                    Number(
+                        item.price
+                    ) *
+                    Number(
+                        item.quantity || 1
+                    )
+                ),
+            0
+        ),
+
+        address:
+            localStorage.getItem(
+                "selectedAddress"
+            )
+
+    };
+
+
+    localStorage.setItem(
+        "printerProCheckout",
+        JSON.stringify(
+            checkoutData
+        )
+    );
+
+
+    window.location.href =
+        "payment.html";
+
+}
+
+
+/* =====================================================
+   BACK
+===================================================== */
+
+function goBack() {
+
+    window.location.href =
+        "products.html";
+
+}
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+loadAddress();
+
+displayCart();
+
+</script>
+
 
 </body>
+
 </html>
