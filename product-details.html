@@ -5,8 +5,9 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <title>Printer Pro - Product Details</title>
 
@@ -24,115 +25,1333 @@
 
 </head>
 
-<body>
 
-<div class="page-container">
+<body
+    style="
+        margin:0;
+        padding:0;
+        background:#f5f8fc;
+        font-family:Arial, Helvetica, sans-serif;
+        color:#071b3a;
+    "
+>
 
-    <div class="simple-header">
 
-        <a href="products.html" class="back-btn">
+<!-- =====================================================
+     MAIN CONTAINER
+===================================================== -->
 
-            <i class="bi bi-arrow-left"></i>
+<div
+    style="
+        width:100%;
+        max-width:504px;
+        margin:0 auto;
+        min-height:100vh;
+        padding:20px 20px 100px;
+        box-sizing:border-box;
+    "
+>
 
-        </a>
 
-        <h4>
-            Product Details
-        </h4>
+    <!-- =================================================
+         HEADER
+    ================================================== -->
+
+    <div
+        style="
+            display:flex;
+            align-items:center;
+            gap:13px;
+            margin-bottom:20px;
+        "
+    >
+
+        <button
+            type="button"
+            onclick="goBack()"
+
+            style="
+                width:42px;
+                height:42px;
+                flex-shrink:0;
+                border:none;
+                border-radius:12px;
+                background:#ffffff;
+                color:#1267d9;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                cursor:pointer;
+                box-shadow:0 4px 14px rgba(20,45,90,0.08);
+                padding:0;
+            "
+        >
+
+            <i
+                class="bi bi-arrow-left"
+                style="font-size:19px;"
+            ></i>
+
+        </button>
+
+
+        <div>
+
+            <h4
+                style="
+                    margin:0 0 4px;
+                    font-size:20px;
+                    font-weight:700;
+                    color:#071b3a;
+                "
+            >
+                Product Details
+            </h4>
+
+
+            <p
+                style="
+                    margin:0;
+                    font-size:12px;
+                    color:#7b8798;
+                "
+            >
+                View product information
+            </p>
+
+        </div>
 
     </div>
 
 
-    <div class="product-detail-image">
 
-        <i class="bi bi-printer"></i>
+    <!-- =================================================
+         PRODUCT CARD
+    ================================================== -->
 
-    </div>
-
-
-    <div class="product-detail-content">
-
-        <h4>
-            HP 12A Toner Cartridge
-        </h4>
-
-        <p>
-            Black Toner Cartridge
-        </p>
-
-        <h3>
-            ₹1,250
-        </h3>
+    <div
+        style="
+            background:#ffffff;
+            border-radius:18px;
+            padding:20px;
+            box-shadow:0 6px 20px rgba(20,45,90,0.07);
+            margin-bottom:14px;
+        "
+    >
 
 
-        <span class="stock-badge">
-            In Stock
-        </span>
+        <!-- PRODUCT ICON -->
 
+        <div
+            style="
+                width:100%;
+                height:170px;
+                border-radius:16px;
+                background:#edf5ff;
+                color:#1267d9;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                margin-bottom:18px;
+            "
+        >
 
-        <hr>
-
-
-        <h6>
-            Compatible Printers
-        </h6>
-
-        <p>
-            HP LaserJet Pro M126nw
-        </p>
-
-        <p>
-            HP LaserJet Pro M1136
-        </p>
-
-
-        <div class="quantity-box">
-
-            <span>
-                Quantity
-            </span>
-
-            <div>
-
-                <button>
-                    -
-                </button>
-
-                <strong>
-                    1
-                </strong>
-
-                <button>
-                    +
-                </button>
-
-            </div>
+            <i
+                id="productIcon"
+                class="bi bi-droplet-fill"
+                style="font-size:70px;"
+            ></i>
 
         </div>
 
 
-        <a
-            href="cart.html"
-            class="btn btn-primary w-100 mt-4">
 
-            Add to Cart
+        <!-- CATEGORY -->
 
-        </a>
+        <div
+            id="productCategory"
+            style="
+                display:inline-block;
+                padding:5px 10px;
+                border-radius:20px;
+                background:#edf5ff;
+                color:#1267d9;
+                font-size:10px;
+                font-weight:700;
+                margin-bottom:8px;
+            "
+        >
+            INK
+        </div>
 
 
-        <a
-            href="checkout.html"
-            class="btn btn-outline-primary w-100 mt-2">
 
-            Buy Now
+        <!-- PRODUCT NAME -->
 
-        </a>
+        <h2
+            id="productName"
+            style="
+                margin:0;
+                font-size:21px;
+                line-height:1.3;
+                font-weight:700;
+                color:#071b3a;
+            "
+        >
+            HP 678 Ink Cartridge
+        </h2>
+
+
+
+        <!-- PRODUCT TYPE -->
+
+        <p
+            id="productType"
+            style="
+                margin:7px 0 12px;
+                font-size:12px;
+                color:#7b8798;
+            "
+        >
+            Tri-Color
+        </p>
+
+
+
+        <!-- PRICE -->
+
+        <div
+            style="
+                display:flex;
+                align-items:center;
+                justify-content:space-between;
+                padding-top:12px;
+                border-top:1px solid #edf0f4;
+            "
+        >
+
+            <span
+                style="
+                    font-size:12px;
+                    color:#7b8798;
+                "
+            >
+                Price
+            </span>
+
+
+            <strong
+                id="productPrice"
+                style="
+                    font-size:22px;
+                    color:#1267d9;
+                "
+            >
+                ₹890
+            </strong>
+
+        </div>
 
     </div>
 
+
+
+    <!-- =================================================
+         PRODUCT INFORMATION
+    ================================================== -->
+
+    <div
+        style="
+            background:#ffffff;
+            border-radius:16px;
+            padding:18px;
+            box-shadow:0 5px 18px rgba(20,45,90,0.05);
+            margin-bottom:14px;
+        "
+    >
+
+        <h5
+            style="
+                margin:0 0 14px;
+                font-size:15px;
+                font-weight:700;
+            "
+        >
+            Product Information
+        </h5>
+
+
+
+        <!-- BRAND -->
+
+        <div
+            style="
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+                padding:10px 0;
+                border-bottom:1px solid #edf0f4;
+            "
+        >
+
+            <span
+                style="
+                    font-size:12px;
+                    color:#7b8798;
+                "
+            >
+                Brand
+            </span>
+
+
+            <strong
+                id="productBrand"
+                style="
+                    font-size:12px;
+                    color:#172033;
+                "
+            >
+                HP
+            </strong>
+
+        </div>
+
+
+
+        <!-- COMPATIBILITY -->
+
+        <div
+            style="
+                display:flex;
+                justify-content:space-between;
+                align-items:flex-start;
+                gap:15px;
+                padding:10px 0;
+                border-bottom:1px solid #edf0f4;
+            "
+        >
+
+            <span
+                style="
+                    font-size:12px;
+                    color:#7b8798;
+                "
+            >
+                Compatible With
+            </span>
+
+
+            <strong
+                id="productCompatible"
+                style="
+                    font-size:12px;
+                    color:#172033;
+                    text-align:right;
+                "
+            >
+                HP DeskJet 2720
+            </strong>
+
+        </div>
+
+
+
+        <!-- AVAILABILITY -->
+
+        <div
+            style="
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+                padding:10px 0;
+            "
+        >
+
+            <span
+                style="
+                    font-size:12px;
+                    color:#7b8798;
+                "
+            >
+                Availability
+            </span>
+
+
+            <span
+                style="
+                    font-size:11px;
+                    font-weight:700;
+                    color:#159447;
+                "
+            >
+
+                <i class="bi bi-check-circle-fill"></i>
+
+                In Stock
+
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         DESCRIPTION
+    ================================================== -->
+
+    <div
+        style="
+            background:#ffffff;
+            border-radius:16px;
+            padding:18px;
+            box-shadow:0 5px 18px rgba(20,45,90,0.05);
+            margin-bottom:14px;
+        "
+    >
+
+        <h5
+            style="
+                margin:0 0 10px;
+                font-size:15px;
+                font-weight:700;
+            "
+        >
+            Description
+        </h5>
+
+
+        <p
+            id="productDescription"
+            style="
+                margin:0;
+                font-size:12px;
+                line-height:1.7;
+                color:#68758a;
+            "
+        >
+            Original quality ink cartridge designed to provide
+            clear and reliable printing performance.
+        </p>
+
+    </div>
+
+
+
+    <!-- =================================================
+         QUANTITY
+    ================================================== -->
+
+    <div
+        style="
+            background:#ffffff;
+            border-radius:16px;
+            padding:16px 18px;
+            box-shadow:0 5px 18px rgba(20,45,90,0.05);
+            margin-bottom:14px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+        "
+    >
+
+        <div>
+
+            <strong
+                style="
+                    display:block;
+                    font-size:13px;
+                    margin-bottom:3px;
+                "
+            >
+                Quantity
+            </strong>
+
+            <span
+                style="
+                    font-size:10px;
+                    color:#8793a5;
+                "
+            >
+                Select quantity
+            </span>
+
+        </div>
+
+
+        <div
+            style="
+                display:flex;
+                align-items:center;
+                gap:12px;
+            "
+        >
+
+            <button
+                type="button"
+                onclick="changeQuantity(-1)"
+
+                style="
+                    width:32px;
+                    height:32px;
+                    border:1px solid #dce3ec;
+                    border-radius:9px;
+                    background:#ffffff;
+                    color:#1267d9;
+                    font-size:17px;
+                    cursor:pointer;
+                "
+            >
+                −
+            </button>
+
+
+            <strong
+                id="quantity"
+                style="
+                    min-width:18px;
+                    text-align:center;
+                    font-size:14px;
+                "
+            >
+                1
+            </strong>
+
+
+            <button
+                type="button"
+                onclick="changeQuantity(1)"
+
+                style="
+                    width:32px;
+                    height:32px;
+                    border:none;
+                    border-radius:9px;
+                    background:#1267d9;
+                    color:#ffffff;
+                    font-size:17px;
+                    cursor:pointer;
+                "
+            >
+                +
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         TOTAL
+    ================================================== -->
+
+    <div
+        style="
+            background:#ffffff;
+            border-radius:16px;
+            padding:17px 18px;
+            margin-bottom:14px;
+            box-shadow:0 5px 18px rgba(20,45,90,0.05);
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+        "
+    >
+
+        <span
+            style="
+                font-size:13px;
+                color:#68758a;
+            "
+        >
+            Total Amount
+        </span>
+
+
+        <strong
+            id="totalPrice"
+            style="
+                font-size:20px;
+                color:#1267d9;
+            "
+        >
+            ₹890
+        </strong>
+
+    </div>
+
+
+
+    <!-- =================================================
+         ACTION BUTTONS
+    ================================================== -->
+
+    <div
+        style="
+            display:flex;
+            gap:10px;
+        "
+    >
+
+        <!-- ADD TO CART -->
+
+        <button
+            type="button"
+            onclick="addToCart()"
+
+            style="
+                flex:1;
+                height:48px;
+                border:1px solid #1267d9;
+                border-radius:11px;
+                background:#ffffff;
+                color:#1267d9;
+                font-size:12px;
+                font-weight:700;
+                cursor:pointer;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                gap:6px;
+            "
+        >
+
+            <i class="bi bi-cart-plus"></i>
+
+            Add to Cart
+
+        </button>
+
+
+
+        <!-- BUY NOW -->
+
+        <button
+            type="button"
+            onclick="buyNow()"
+
+            style="
+                flex:1;
+                height:48px;
+                border:none;
+                border-radius:11px;
+                background:#1267d9;
+                color:#ffffff;
+                font-size:12px;
+                font-weight:700;
+                cursor:pointer;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                gap:6px;
+            "
+        >
+
+            Buy Now
+
+            <i class="bi bi-arrow-right"></i>
+
+        </button>
+
+    </div>
+
+
 </div>
 
-<script src="app.js"></script>
+
+
+<!-- =====================================================
+     BOTTOM NAVIGATION
+===================================================== -->
+
+<div class="bottom-nav">
+
+    <a href="home.html">
+
+        <i class="bi bi-house"></i>
+
+        <span>
+            Home
+        </span>
+
+    </a>
+
+
+    <a href="current-orders.html">
+
+        <i class="bi bi-truck"></i>
+
+        <span>
+            Current Orders
+        </span>
+
+    </a>
+
+
+    <a href="history.html">
+
+        <i class="bi bi-clock-history"></i>
+
+        <span>
+            History
+        </span>
+
+    </a>
+
+
+    <a href="profile.html">
+
+        <i class="bi bi-person"></i>
+
+        <span>
+            Profile
+        </span>
+
+    </a>
+
+</div>
+
+
+
+<script>
+
+
+/* =====================================================
+   PRODUCT DATABASE
+===================================================== */
+
+const products = {
+
+    "HP 678 Ink Cartridge": {
+
+        name:"HP 678 Ink Cartridge",
+
+        category:"INK",
+
+        type:"Tri-Color",
+
+        brand:"HP",
+
+        compatible:"HP DeskJet 2720",
+
+        price:890,
+
+        icon:"bi-droplet",
+
+        description:
+            "HP 678 Tri-Color Ink Cartridge provides reliable and clear colour printing for compatible HP printers. It is suitable for everyday documents, graphics and photographs."
+
+    },
+
+
+    "HP 12A Toner": {
+
+        name:"HP 12A Toner",
+
+        category:"TONER",
+
+        type:"Black",
+
+        brand:"HP",
+
+        compatible:"HP LaserJet printers",
+
+        price:1250,
+
+        icon:"bi-printer",
+
+        description:
+            "HP 12A Black Toner Cartridge provides sharp text and consistent printing performance for compatible HP LaserJet printers."
+
+    },
+
+
+    "Canon Ink Cartridge": {
+
+        name:"Canon Ink Cartridge",
+
+        category:"INK",
+
+        type:"Black",
+
+        brand:"Canon",
+
+        compatible:"Canon Pixma printers",
+
+        price:950,
+
+        icon:"bi-droplet-fill",
+
+        description:
+            "Canon Black Ink Cartridge provides smooth and reliable printing performance for compatible Canon Pixma printers."
+
+    },
+
+
+    "HP Black Ink Cartridge": {
+
+        name:"HP Black Ink Cartridge",
+
+        category:"INK",
+
+        type:"Black",
+
+        brand:"HP",
+
+        compatible:"HP DeskJet 2720",
+
+        price:850,
+
+        icon:"bi-droplet-fill",
+
+        description:
+            "Original quality black ink cartridge suitable for compatible HP DeskJet printers."
+
+    },
+
+
+    "Canon Black Ink Cartridge": {
+
+        name:"Canon Black Ink Cartridge",
+
+        category:"CARTRIDGE",
+
+        type:"Black",
+
+        brand:"Canon",
+
+        compatible:"Canon Pixma E410",
+
+        price:720,
+
+        icon:"bi-droplet",
+
+        description:
+            "Reliable black ink cartridge designed for compatible Canon Pixma printers."
+
+    },
+
+
+    "Epson Black Ink Bottle": {
+
+        name:"Epson Black Ink Bottle",
+
+        category:"INK",
+
+        type:"Black",
+
+        brand:"Epson",
+
+        compatible:"Epson L3110 / L3150",
+
+        price:590,
+
+        icon:"bi-droplet-fill",
+
+        description:
+            "High quality black ink bottle for compatible Epson EcoTank printers."
+
+    },
+
+
+    "HP 88A Black Toner": {
+
+        name:"HP 88A Black Toner",
+
+        category:"TONER",
+
+        type:"Black",
+
+        brand:"HP",
+
+        compatible:"HP LaserJet Pro",
+
+        price:1450,
+
+        icon:"bi-printer-fill",
+
+        description:
+            "Black toner cartridge for compatible HP LaserJet printers."
+
+    },
+
+
+    "Canon Black Toner": {
+
+        name:"Canon Black Toner",
+
+        category:"TONER",
+
+        type:"Black",
+
+        brand:"Canon",
+
+        compatible:"Canon LBP6030",
+
+        price:1350,
+
+        icon:"bi-printer",
+
+        description:
+            "High quality toner cartridge for compatible Canon laser printers."
+
+    },
+
+
+    "Printer Drum Unit": {
+
+        name:"Printer Drum Unit",
+
+        category:"DRUM",
+
+        type:"Replacement Drum",
+
+        brand:"HP",
+
+        compatible:"HP LaserJet Series",
+
+        price:2100,
+
+        icon:"bi-circle",
+
+        description:
+            "Replacement drum unit designed for compatible HP LaserJet printers."
+
+    },
+
+
+    "Paper Pickup Roller": {
+
+        name:"Paper Pickup Roller",
+
+        category:"ACCESSORIES",
+
+        type:"Pickup Roller",
+
+        brand:"Universal",
+
+        compatible:"Multiple HP Models",
+
+        price:450,
+
+        icon:"bi-record-circle",
+
+        description:
+            "Replacement paper pickup roller for compatible printer models."
+
+    },
+
+
+    "Printer Cleaning Kit": {
+
+        name:"Printer Cleaning Kit",
+
+        category:"ACCESSORIES",
+
+        type:"Cleaning Kit",
+
+        brand:"Printer Pro",
+
+        compatible:"Universal",
+
+        price:350,
+
+        icon:"bi-tools",
+
+        description:
+            "Printer cleaning kit for maintaining printer performance and keeping printer components clean."
+
+    }
+
+};
+
+
+
+/* =====================================================
+   GET SELECTED PRODUCT
+===================================================== */
+
+let selectedProductName =
+    localStorage.getItem(
+        "selectedProduct"
+    );
+
+
+/*
+   printer-parts.html uses
+   selectedPrinterPart.
+*/
+
+if(!selectedProductName) {
+
+    const selectedPartId =
+        localStorage.getItem(
+            "selectedPrinterPart"
+        );
+
+
+    if(selectedPartId) {
+
+        const partId =
+            Number(
+                selectedPartId
+            );
+
+
+        const partsMap = {
+
+            1:"HP Black Ink Cartridge",
+
+            2:"Canon Black Ink Cartridge",
+
+            3:"Epson Black Ink Bottle",
+
+            4:"HP 88A Black Toner",
+
+            5:"Canon Black Toner",
+
+            6:"Printer Drum Unit",
+
+            7:"Paper Pickup Roller",
+
+            8:"Printer Cleaning Kit"
+
+        };
+
+
+        selectedProductName =
+            partsMap[partId];
+
+    }
+
+}
+
+
+/*
+   Default product if nothing
+   was selected.
+*/
+
+if(!selectedProductName) {
+
+    selectedProductName =
+        "HP 678 Ink Cartridge";
+
+}
+
+
+
+let product =
+    products[selectedProductName];
+
+
+if(!product) {
+
+    product =
+        products["HP 678 Ink Cartridge"];
+
+}
+
+
+
+let quantity = 1;
+
+
+
+/* =====================================================
+   LOAD PRODUCT
+===================================================== */
+
+function loadProduct() {
+
+    document.getElementById(
+        "productName"
+    ).innerText =
+        product.name;
+
+
+    document.getElementById(
+        "productCategory"
+    ).innerText =
+        product.category;
+
+
+    document.getElementById(
+        "productType"
+    ).innerText =
+        product.type;
+
+
+    document.getElementById(
+        "productBrand"
+    ).innerText =
+        product.brand;
+
+
+    document.getElementById(
+        "productCompatible"
+    ).innerText =
+        product.compatible;
+
+
+    document.getElementById(
+        "productPrice"
+    ).innerText =
+        formatPrice(product.price);
+
+
+    document.getElementById(
+        "totalPrice"
+    ).innerText =
+        formatPrice(
+            product.price *
+            quantity
+        );
+
+
+    document.getElementById(
+        "productDescription"
+    ).innerText =
+        product.description;
+
+
+    document.getElementById(
+        "productIcon"
+    ).className =
+        "bi " + product.icon;
+
+}
+
+
+
+/* =====================================================
+   FORMAT PRICE
+===================================================== */
+
+function formatPrice(price) {
+
+    return "₹" +
+        price.toLocaleString(
+            "en-IN"
+        );
+
+}
+
+
+
+/* =====================================================
+   CHANGE QUANTITY
+===================================================== */
+
+function changeQuantity(
+    amount
+) {
+
+    quantity += amount;
+
+
+    if(quantity < 1) {
+
+        quantity = 1;
+
+    }
+
+
+    if(quantity > 10) {
+
+        quantity = 10;
+
+    }
+
+
+    document.getElementById(
+        "quantity"
+    ).innerText =
+        quantity;
+
+
+    document.getElementById(
+        "totalPrice"
+    ).innerText =
+        formatPrice(
+            product.price *
+            quantity
+        );
+
+}
+
+
+
+/* =====================================================
+   ADD TO CART
+===================================================== */
+
+function addToCart() {
+
+    let cart =
+        JSON.parse(
+            localStorage.getItem(
+                "printerProCart"
+            )
+        ) || [];
+
+
+    const existing =
+        cart.find(
+            item =>
+                item.name ===
+                product.name
+        );
+
+
+    if(existing) {
+
+        existing.quantity +=
+            quantity;
+
+    }
+    else {
+
+        cart.push({
+
+            name:product.name,
+
+            price:product.price,
+
+            quantity:quantity
+
+        });
+
+    }
+
+
+    localStorage.setItem(
+        "printerProCart",
+        JSON.stringify(cart)
+    );
+
+
+    alert(
+        product.name +
+        " added to cart."
+    );
+
+}
+
+
+
+/* =====================================================
+   BUY NOW
+===================================================== */
+
+function buyNow() {
+
+    let cart =
+        JSON.parse(
+            localStorage.getItem(
+                "printerProCart"
+            )
+        ) || [];
+
+
+    const existing =
+        cart.find(
+            item =>
+                item.name ===
+                product.name
+        );
+
+
+    if(existing) {
+
+        existing.quantity +=
+            quantity;
+
+    }
+    else {
+
+        cart.push({
+
+            name:product.name,
+
+            price:product.price,
+
+            quantity:quantity
+
+        });
+
+    }
+
+
+    localStorage.setItem(
+        "printerProCart",
+        JSON.stringify(cart)
+    );
+
+
+    /*
+       Go to your existing
+       checkout page.
+    */
+
+    window.location.href =
+        "checkout.html";
+
+}
+
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+function goBack() {
+
+    /*
+       If the product came from
+       printer-parts.html, return there.
+    */
+
+    const selectedPart =
+        localStorage.getItem(
+            "selectedPrinterPart"
+        );
+
+
+    if(selectedPart) {
+
+        window.location.href =
+            "printer-parts.html";
+
+        return;
+
+    }
+
+
+    /*
+       Otherwise return to
+       products.html.
+    */
+
+    window.location.href =
+        "products.html";
+
+}
+
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+loadProduct();
+
+
+</script>
+
 
 </body>
+
 </html>
